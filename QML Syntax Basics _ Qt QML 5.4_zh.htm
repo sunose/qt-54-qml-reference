@@ -356,14 +356,14 @@ color: #008000;
 <p>语法上来说,  QML代码块定义了一个要被创建的QML 对象树.对象定义是使用<i>对象声明</i>
  描述一个将要创建的对象的类型以及对象所具有的特性(attributes).每个对象可以使用嵌套的对象声明来声明子对象.</p>
 <p>对象声明的组成是有对象类型，紧跟的一组花括号.所有的特性(attributes)和子对象都在这些括号内声明.</p>
-<p>这里给一个简单的对象声明:</p>
+<p>这里给一个简单的对象声明例子:</p>
 <pre class="qml"><span class="type"><a href="http://doc.qt.io/qt-5/qml-qtquick-rectangle.html">Rectangle</a></span> {
     <span class="name">width</span>: <span class="number">100</span>
     <span class="name">height</span>: <span class="number">100</span>
     <span class="name">color</span>: <span class="string">"red"</span>
 }</pre>
-<p>This declares an object of type <a href="http://doc.qt.io/qt-5/qml-qtquick-rectangle.html">Rectangle</a>, followed by a set of curly braces that encompasses the attributes defined for that object. The <a href="http://doc.qt.io/qt-5/qml-qtquick-rectangle.html">Rectangle</a> type is a type made available by the <code>QtQuick</code> module, and the attributes defined in this case are the values of the rectangle's <code>width</code>, <code>height</code> and <code>color</code> properties. (These are properties made available by the <a href="http://doc.qt.io/qt-5/qml-qtquick-rectangle.html">Rectangle</a> type, as described in the <a href="http://doc.qt.io/qt-5/qml-qtquick-rectangle.html">Rectangle</a> documentation.)</p>
-<p>The above object can be loaded by the engine if it is part of a <a href="http://doc.qt.io/qt-5/qtqml-documents-topic.html">QML document</a>. That is, if the source code is complemented with <i>import</i> statement that imports the <code>QtQuick</code> module (to make the <a href="http://doc.qt.io/qt-5/qml-qtquick-rectangle.html">Rectangle</a> type available), as below:</p>
+<p>这声明了一个对象类型<a href="http://doc.qt.io/qt-5/qml-qtquick-rectangle.html">Rectangle</a>, 跟随一组花括号包括了定义对象的特性(attributes).  <a href="http://doc.qt.io/qt-5/qml-qtquick-rectangle.html">Rectangle</a>类型可以被<code>QtQuick</code>模块使用, 定义的特性的属性值<code>width</code>, <code>height</code>和 <code>color</code> . (这些就是类型<a href="http://doc.qt.io/qt-5/qml-qtquick-rectangle.html">Rectangle</a> 的属性,通过<a href="http://doc.qt.io/qt-5/qml-qtquick-rectangle.html">Rectangle</a> 文档的描述)</p>
+<p>上面对象如果在<a href="http://doc.qt.io/qt-5/qtqml-documents-topic.html">QML文档</a>里就可以被引擎载入. 如果源代码使用import<code>QtQuick</code>模块 (这样才能使<a href="http://doc.qt.io/qt-5/qml-qtquick-rectangle.html">Rectangle</a>类型可用),如下:</p>
 <pre class="qml">import QtQuick 2.0
 
 <span class="type"><a href="http://doc.qt.io/qt-5/qml-qtquick-rectangle.html">Rectangle</a></span> {
@@ -371,20 +371,15 @@ color: #008000;
     <span class="name">height</span>: <span class="number">100</span>
     <span class="name">color</span>: <span class="string">"red"</span>
 }</pre>
-<p>When placed into a <code>.qml</code> file and loaded by the QML engine, the above code creates a <a href="http://doc.qt.io/qt-5/qml-qtquick-rectangle.html">Rectangle</a> object using the <a href="http://doc.qt.io/qt-5/qml-qtquick-rectangle.html">Rectangle</a> type supplied by the <code>QtQuick</code> module:</p>
-<p class="centerAlign"><img src="QML%20Syntax%20Basics%20_%20Qt%20QML%205.4_zh_files/qtqml-syntax-basics-object-declaration.png" alt=""></p><p><b>Note: </b>If
- an object definition only has a small number of properties, it can be 
-written on a single line like this, with the properties separated by 
-semi-colons:</p><pre class="qml"><span class="type"><a href="http://doc.qt.io/qt-5/qml-qtquick-rectangle.html">Rectangle</a></span> { <span class="name">width</span>: <span class="number">100</span>; <span class="name">height</span>: <span class="number">100</span>; <span class="name">color</span>: <span class="string">"red"</span> }</pre>
-<p>Obviously, the <a href="http://doc.qt.io/qt-5/qml-qtquick-rectangle.html">Rectangle</a>
- object declared in this example is very simple indeed, as it defines 
-nothing more than a few property values. To create more useful objects, 
-an object declaration may define many other types of attributes: these 
-are discussed in the <a href="http://doc.qt.io/qt-5/qtqml-syntax-objectattributes.html">QML Object Attributes</a> documentation. Additionally, an object declaration may define child objects, as discussed below.</p>
+<p>当将该代码放入<code>.qml</code>文件然后由QML引擎载入,上面代码创建<a href="http://doc.qt.io/qt-5/qml-qtquick-rectangle.html">Rectangle</a>对象根据由<code>QtQuick</code>模块提供的<a href="http://doc.qt.io/qt-5/qml-qtquick-rectangle.html">Rectangle</a>类型供:</p>
+<p class="centerAlign"><img src="QML%20Syntax%20Basics%20_%20Qt%20QML%205.4_zh_files/qtqml-syntax-basics-object-declaration.png" alt=""></p><p><b>说明: </b>If
+ 如果一个对象只是定义小数目的属性可以按照下面的语法书写在一行内,属性由分号;来分开 :</p><pre class="qml"><span class="type"><a href="http://doc.qt.io/qt-5/qml-qtquick-rectangle.html">Rectangle</a></span> { <span class="name">width</span>: <span class="number">100</span>; <span class="name">height</span>: <span class="number">100</span>; <span class="name">color</span>: <span class="string">"red"</span> }</pre>
+<p>很明显,<a href="http://doc.qt.io/qt-5/qml-qtquick-rectangle.html">Rectangle</a>
+ 对象在本例中声明的非常的简单, 除了定义一些属性值外没有其他任何东西. 为了建立更有用的对象,一个对象可以声明更多的其他特性:这些可以参看文档 <a href="http://doc.qt.io/qt-5/qtqml-syntax-objectattributes.html">QML 对象特性</a> 文档. 另外,对象声明可以顶子对象如下讨论:.</p>
 <a name="child-objects"></a>
-<h3>Child Objects</h3>
-<p>Any object declaration can define child objects through nested object declarations. In this way, <b>any object declaration implicitly declares an object tree that may contain any number of child objects</b>.</p>
-<p>For example, the <a href="http://doc.qt.io/qt-5/qml-qtquick-rectangle.html">Rectangle</a> object declaration below includes a <a href="http://doc.qt.io/qt-5/qml-qtquick-gradient.html">Gradient</a> object declaration, which in turn contains two <a href="http://doc.qt.io/qt-5/qml-qtquick-gradientstop.html">GradientStop</a> declarations:</p>
+<h3>子对象</h3>
+<p>任何对象声明可以通过嵌套对象声明来定义子对象. 通过这种方式,<b>任何对象声明都隐含的声明了一个对象树可以包含任意数目的子对象</b>.</p>
+<p>比如<a href="http://doc.qt.io/qt-5/qml-qtquick-rectangle.html">Rectangle</a> 对象声明如下包含一个<a href="http://doc.qt.io/qt-5/qml-qtquick-gradient.html">Gradient</a>对象声明, 其包含两个<a href="http://doc.qt.io/qt-5/qml-qtquick-gradientstop.html">GradientStop</a>声明:</p>
 <pre class="qml">import QtQuick 2.0
 
 <span class="type"><a href="http://doc.qt.io/qt-5/qml-qtquick-rectangle.html">Rectangle</a></span> {
@@ -396,11 +391,9 @@ are discussed in the <a href="http://doc.qt.io/qt-5/qtqml-syntax-objectattribute
         <span class="type"><a href="http://doc.qt.io/qt-5/qml-qtquick-gradientstop.html">GradientStop</a></span> { <span class="name">position</span>: <span class="number">1.0</span>; <span class="name">color</span>: <span class="string">"green"</span> }
     }
 }</pre>
-<p>When this code is loaded by the engine, it creates an object tree with a <a href="http://doc.qt.io/qt-5/qml-qtquick-rectangle.html">Rectangle</a> object at the root; this object has a <a href="http://doc.qt.io/qt-5/qml-qtquick-gradient.html">Gradient</a> child object, which in turn has two <a href="http://doc.qt.io/qt-5/qml-qtquick-gradientstop.html">GradientStop</a> children.</p>
-<p>Note, however, that this is a parent-child relationship in the 
-context of the QML object tree, not in the context of the visual scene. 
-The concept of a parent-child relationship in a visual scene is provided
- by the <a href="http://doc.qt.io/qt-5/qml-qtquick-item.html">Item</a> type from the <code>QtQuick</code> module, which is the base type for most QML types, as most QML objects are intended to be visually rendered. For example, <a href="http://doc.qt.io/qt-5/qml-qtquick-rectangle.html">Rectangle</a> and <a href="http://doc.qt.io/qt-5/qtquick-releasenotes.html#text">Text</a> are both <a href="http://doc.qt.io/qt-5/qml-qtquick-item.html">Item</a>-based types, and below, a <a href="http://doc.qt.io/qt-5/qtquick-releasenotes.html#text">Text</a> object has been declared as a visual child of a <a href="http://doc.qt.io/qt-5/qml-qtquick-rectangle.html">Rectangle</a> object:</p>
+<p>当这段代码被引擎载入后,引擎将建立一个对象树其中对象<a href="http://doc.qt.io/qt-5/qml-qtquick-rectangle.html">Rectangle</a>在根部; 这个对象有<a href="http://doc.qt.io/qt-5/qml-qtquick-gradient.html">Gradient</a> 子对象,该对象有2个<a href="http://doc.qt.io/qt-5/qml-qtquick-gradientstop.html">GradientStop</a>孩子.</p>
+<p>说明:, 在QML对象树上下文中这是一个父子关系,而不是在可视场景上下文中.在可视场景中的父子关系的概念是由来自<code>QtQuick</code>模块的
+<a href="http://doc.qt.io/qt-5/qml-qtquick-item.html">Item</a>类型引申出来的 , Item是绝大多数QML类型的基础类型,同时也是可以可视化渲染的绝大多数QML对象的基类. 举例<a href="http://doc.qt.io/qt-5/qml-qtquick-rectangle.html">Rectangle</a>和 <a href="http://doc.qt.io/qt-5/qtquick-releasenotes.html#text">Text</a> 都属于<a href="http://doc.qt.io/qt-5/qml-qtquick-item.html">Item</a>-基础的类型,下面的<a href="http://doc.qt.io/qt-5/qtquick-releasenotes.html#text">Text</a>对象输入已经声明了一个可视化<a href="http://doc.qt.io/qt-5/qml-qtquick-rectangle.html">Rectangle</a>对象的子对象:</p>
 <pre class="qml">import QtQuick 2.0
 
 <span class="type"><a href="http://doc.qt.io/qt-5/qml-qtquick-rectangle.html">Rectangle</a></span> {
@@ -413,17 +406,16 @@ The concept of a parent-child relationship in a visual scene is provided
         <span class="name">text</span>: <span class="string">"Hello, QML!"</span>
     }
 }</pre>
-<p>When the <a href="http://doc.qt.io/qt-5/qtquick-releasenotes.html#text">Text</a> object refers to its <a href="http://doc.qt.io/qt-5/qml-qtquick-item.html#parent-prop">parent</a> value in the above code, it is referring to its <i>visual parent</i>, not the parent in the object tree. In this case, they are one and the same: the <a href="http://doc.qt.io/qt-5/qml-qtquick-rectangle.html">Rectangle</a> object is the parent of the <a href="http://doc.qt.io/qt-5/qtquick-releasenotes.html#text">Text</a> object in both the context of the QML object tree as well as the context of the visual scene. However, while the <a href="http://doc.qt.io/qt-5/qml-qtquick-item.html#parent-prop">parent</a>
- property can be modified to change the visual parent, the parent of an 
-object in the context of the object tree cannot be changed from QML.</p>
-<p>(Additionally, notice that the <a href="http://doc.qt.io/qt-5/qtquick-releasenotes.html#text">Text</a> object has been declared without assigning it to a property of the <a href="http://doc.qt.io/qt-5/qml-qtquick-rectangle.html">Rectangle</a>, unlike the earlier example which assigned a <a href="http://doc.qt.io/qt-5/qml-qtquick-gradient.html">Gradient</a> object to the rectangle's <code>gradient</code> property. This is because the <a href="http://doc.qt.io/qt-5/qml-qtquick-item.html#children-prop">children</a> property of <a href="http://doc.qt.io/qt-5/qml-qtquick-item.html">Item</a> has been set as the type's <a href="http://doc.qt.io/qt-5/qtqml-syntax-objectattributes.html#default-properties">default property</a> to enable this more convenient syntax.)</p>
-<p>See the <a href="http://doc.qt.io/qt-5/qtquick-visualcanvas-visualparent.html">visual parent</a> documentation for more information on the concept of visual parenting with the <a href="http://doc.qt.io/qt-5/qml-qtquick-item.html">Item</a> type.</p>
+<p>上面代码里的<a href="http://doc.qt.io/qt-5/qtquick-releasenotes.html#text">Text</a> 对象引用它的 <a href="http://doc.qt.io/qt-5/qml-qtquick-item.html#parent-prop">parent</a> 值, 这是应用它的<i>可视化父亲</i>,而不是在对象树里的父亲.这种情况下,它们其实是一致的:<a href="http://doc.qt.io/qt-5/qml-qtquick-rectangle.html">Rectangle</a> 对象是<a href="http://doc.qt.io/qt-5/qtquick-releasenotes.html#text">Text</a>对象在QLM对象树和可视化场景上下文中的付清. 但是总要区别 <a href="http://doc.qt.io/qt-5/qml-qtquick-item.html#parent-prop">parent</a>
+ 属性在可视化父亲里可以修改，但在对象树上下文中的父亲不能通过QML来修改</p>
+<p>(另外的,注意<a href="http://doc.qt.io/qt-5/qtquick-releasenotes.html#text">Text</a>对象在声明的时候并没有赋值给<a href="http://doc.qt.io/qt-5/qml-qtquick-rectangle.html">Rectangle</a>的一个属性, 不像先前的例子赋予<a href="http://doc.qt.io/qt-5/qml-qtquick-gradient.html">Gradient</a> 对象到rectangle的 <code>gradient</code>属性. 这是因为<a href="http://doc.qt.io/qt-5/qml-qtquick-item.html">Item</a>的<a href="http://doc.qt.io/qt-5/qml-qtquick-item.html#children-prop">children</a> 属性已经作为类型的<a href="http://doc.qt.io/qt-5/qtqml-syntax-objectattributes.html#default-properties">默认属性(default property)</a>更加方便的语法.)</p>
+<p>参看<a href="http://doc.qt.io/qt-5/qtquick-visualcanvas-visualparent.html">可视化父亲(visual parent)</a> 文档了解更多有关<a href="http://doc.qt.io/qt-5/qml-qtquick-item.html">Item</a>类型可视化父亲更多的信息.</p>
 <a name="comments"></a>
-<h2 id="comments">Comments</h2>
-<p>The syntax for commenting in QML is similar to that of JavaScript:</p>
+<h2 id="comments">注释语句</h2>
+<p>QLM的注释语法和JavaScript语法相似:</p>
 <ul>
-<li>Single line comments start with // and finish at the end of the line.</li>
-<li>Multiline comments start with /* and finish with */</li>
+<li>单行注释开始以//结束到行尾.</li>
+<li>多行注释开始以/* 结束以*/</li>
 </ul>
 <pre class="qml"><span class="type"><a href="http://doc.qt.io/qt-5/qml-qtquick-text.html">Text</a></span> {
     <span class="name">text</span>: <span class="string">"Hello world!"</span>    <span class="comment">//a basic greeting</span>
@@ -434,16 +426,13 @@ object in the context of the object tree cannot be changed from QML.</p>
     <span class="name">font</span>.family: <span class="string">"Helvetica"</span>
     <span class="name">font</span>.pointSize: <span class="number">24</span>
 }</pre>
-<p>Comments are ignored by the engine when processing QML code. They are
- useful for explaining what a section of code is doing, whether for 
-reference at a later date or for explaining the implementation to 
-others.</p>
-<p>Comments can also be used to prevent the execution of code, which is sometimes useful for tracking down problems.</p>
+<p>注释行在引擎处理QML代码的时候被忽略掉. 注释主要用于解释代码的用户，以及以后日期的参考或者解释实现给其他人</p>
+<p>注释也用于阻止代码执行,这对追踪问题的时候非常有用.</p>
 <pre class="qml">    <span class="type"><a href="http://doc.qt.io/qt-5/qml-qtquick-text.html">Text</a></span> {
         <span class="name">text</span>: <span class="string">"Hello world!"</span>
         <span class="comment">//opacity: 0.5</span>
     }</pre>
-<p>In the above example, the <a href="http://doc.qt.io/qt-5/qtquick-releasenotes.html#text">Text</a> object will have normal opacity, since the line opacity: 0.5 has been turned into a comment.</p>
+<p>上面的例子中<a href="http://doc.qt.io/qt-5/qtquick-releasenotes.html#text">Text</a>对象具有正常的不透明(opacity)值 因为该行 opacity: 0.5 被注释掉了</p>
 </div>
 <!-- @@@qtqml-syntax-basics.html -->
    </div>
