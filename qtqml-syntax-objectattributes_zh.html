@@ -1,0 +1,750 @@
+<!--?xml version="1.0" encoding="UTF-8"?-->
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<!-- objectattributes.qdoc -->
+  <title>QML 对象特性(Attributes) | Qt QML 5.4</title>
+  <link rel="stylesheet" type="text/css" href="qtqml-syntax-objectattributes_files/online.css">
+  <link rel="shortcut icon" href="http://d3hp9ud7yvwzy0.cloudfront.net/wp-content/themes/oneqt/images/favicon.ico.gzip">
+  
+  <style type="text/css">
+.gsc-control-cse {
+font-family: Arial, sans-serif;
+border-color: #FFFFFF;
+background-color: #FFFFFF;
+}
+.gsc-control-cse .gsc-table-result {
+font-family: Arial, sans-serif;
+}
+input.gsc-input {
+border-color: #D9D9D9;
+}
+input.gsc-search-button {
+border-color: #5CAA15;
+background-color: #5CAA15;
+}
+.gsc-tabHeader.gsc-tabhInactive {
+border-color: #E9E9E9;
+background-color: #E9E9E9;
+}
+.gsc-tabHeader.gsc-tabhActive {
+border-top-color: #5CAA15;
+border-left-color: #E9E9E9;
+border-right-color: #E9E9E9;
+background-color: #FFFFFF;
+}
+.gsc-tabsArea {
+border-color: #E9E9E9;
+}
+.gsc-webResult.gsc-result,
+.gsc-results .gsc-imageResult {
+border-color: #FFFFFF;
+background-color: #FFFFFF;
+}
+.gsc-webResult.gsc-result:hover,
+.gsc-imageResult:hover {
+border-color: #FFFFFF;
+background-color: #FFFFFF;
+}
+.gsc-webResult.gsc-result.gsc-promotion:hover {
+border-color: #FFFFFF;
+background-color: #FFFFFF;
+}
+.gs-webResult.gs-result a.gs-title:link,
+.gs-webResult.gs-result a.gs-title:link b,
+.gs-imageResult a.gs-title:link,
+.gs-imageResult a.gs-title:link b {
+color: #5CAA15;
+}
+.gs-webResult.gs-result a.gs-title:visited,
+.gs-webResult.gs-result a.gs-title:visited b,
+.gs-imageResult a.gs-title:visited,
+.gs-imageResult a.gs-title:visited b {
+color: #46A2DA;
+}
+.gs-webResult.gs-result a.gs-title:hover,
+.gs-webResult.gs-result a.gs-title:hover b,
+.gs-imageResult a.gs-title:hover,
+.gs-imageResult a.gs-title:hover b {
+color: #46A2DA;
+}
+.gs-webResult.gs-result a.gs-title:active,
+.gs-webResult.gs-result a.gs-title:active b,
+.gs-imageResult a.gs-title:active,
+.gs-imageResult a.gs-title:active b {
+color: #5CAA15;
+}
+.gsc-cursor-page {
+color: #5CAA15;
+}
+a.gsc-trailing-more-results:link {
+color: #5CAA15;
+}
+.gs-webResult .gs-snippet,
+.gs-imageResult .gs-snippet,
+.gs-fileFormatType {
+color: #404244;
+}
+.gs-webResult div.gs-visibleUrl,
+.gs-imageResult div.gs-visibleUrl {
+color: #5CAA15;
+}
+.gs-webResult div.gs-visibleUrl-short {
+color: #5CAA15;
+}
+.gs-webResult div.gs-visibleUrl-short {
+display: none;
+}
+.gs-webResult div.gs-visibleUrl-long {
+display: block;
+}
+.gs-promotion div.gs-visibleUrl-short {
+display: none;
+}
+.gs-promotion div.gs-visibleUrl-long {
+display: block;
+}
+.gsc-cursor-box {
+border-color: #FFFFFF;
+}
+.gsc-results .gsc-cursor-box .gsc-cursor-page {
+border-color: #E9E9E9;
+background-color: #FFFFFF;
+color: #5CAA15;
+}
+.gsc-results .gsc-cursor-box .gsc-cursor-current-page {
+border-color: #5CAA15;
+background-color: #FFFFFF;
+color: #46A2DA;
+}
+.gsc-webResult.gsc-result.gsc-promotion {
+border-color: #404244;
+background-color: #FFFFFF;
+}
+.gsc-completion-title {
+color: #5CAA15;
+}
+.gsc-completion-snippet {
+color: #404244;
+}
+.gs-promotion a.gs-title:link,
+.gs-promotion a.gs-title:link *,
+.gs-promotion .gs-snippet a:link {
+color: #0000CC;
+}
+.gs-promotion a.gs-title:visited,
+.gs-promotion a.gs-title:visited *,
+.gs-promotion .gs-snippet a:visited {
+color: #0000CC;
+}
+.gs-promotion a.gs-title:hover,
+.gs-promotion a.gs-title:hover *,
+.gs-promotion .gs-snippet a:hover {
+color: #0000CC;
+}
+.gs-promotion a.gs-title:active,
+.gs-promotion a.gs-title:active *,
+.gs-promotion .gs-snippet a:active {
+color: #0000CC;
+}
+.gs-promotion .gs-snippet,
+.gs-promotion .gs-title .gs-promotion-title-right,
+.gs-promotion .gs-title .gs-promotion-title-right * {
+color: #000000;
+}
+.gs-promotion .gs-visibleUrl,
+.gs-promotion .gs-visibleUrl-short {
+color: #008000;
+}
+</style><style type="text/css">.gscb_a{display:inline-block;font:27px/13px arial,sans-serif}.gsst_a .gscb_a{color:#a1b9ed;cursor:pointer}.gsst_a:hover .gscb_a,.gsst_a:focus .gscb_a{color:#36c}.gsst_a{display:inline-block}.gsst_a{cursor:pointer;padding:0 4px}.gsst_a:hover{text-decoration:none!important}.gsst_b{font-size:16px;padding:0 2px;position:relative;user-select:none;-moz-user-select:none;white-space:nowrap}.gsst_e{opacity:0.55;}.gsst_a:hover .gsst_e,.gsst_a:focus .gsst_e{opacity:0.72;}.gsst_a:active .gsst_e{opacity:1;}.gsst_f{background:white;text-align:left}.gsst_g{background-color:white;border:1px solid #ccc;border-top-color:#d9d9d9;box-shadow:0 2px 4px rgba(0,0,0,0.2);-moz-box-shadow:0 2px 4px rgba(0,0,0,0.2);margin:-1px -3px;padding:0 6px}.gsst_h{background-color:white;height:1px;margin-bottom:-1px;position:relative;top:-1px}.gsib_a{width:100%;padding:4px 6px 0}.gsib_a,.gsib_b{vertical-align:top}.gssb_c{border:0;position:absolute;z-index:989}.gssb_e{border:1px solid #ccc;border-top-color:#d9d9d9;box-shadow:0 2px 4px rgba(0,0,0,0.2);-moz-box-shadow:0 2px 4px rgba(0,0,0,0.2);cursor:default}.gssb_f{visibility:hidden;white-space:nowrap}.gssb_k{border:0;display:block;position:absolute;top:0;z-index:988}.gsdd_a{border:none!important}.gsq_a{padding:0}.gscsep_a{display:none}.gssb_a{padding:0 7px}.gssb_a,.gssb_a td{white-space:nowrap;overflow:hidden;line-height:22px}#gssb_b{font-size:11px;color:#36c;text-decoration:none}#gssb_b:hover{font-size:11px;color:#36c;text-decoration:underline}.gssb_g{text-align:center;padding:8px 0 7px;position:relative}.gssb_h{font-size:15px;height:28px;margin:0.2em}.gssb_i{background:#eee}.gss_ifl{visibility:hidden;padding-left:5px}.gssb_i .gss_ifl{visibility:visible}a.gssb_j{font-size:13px;color:#36c;text-decoration:none;line-height:100%}a.gssb_j:hover{text-decoration:underline}.gssb_l{height:1px;background-color:#e5e5e5}.gssb_m{color:#000;background:#fff}.gsfe_a{border:1px solid #b9b9b9;border-top-color:#a0a0a0;box-shadow:inset 0px 1px 2px rgba(0,0,0,0.1);-moz-box-shadow:inset 0px 1px 2px rgba(0,0,0,0.1);-webkit-box-shadow:inset 0px 1px 2px rgba(0,0,0,0.1);}.gsfe_b{border:1px solid #4d90fe;outline:none;box-shadow:inset 0px 1px 2px rgba(0,0,0,0.3);-moz-box-shadow:inset 0px 1px 2px rgba(0,0,0,0.3);-webkit-box-shadow:inset 0px 1px 2px rgba(0,0,0,0.3);}.gssb_a{padding:0 7px}.gssb_e{border:0}.gssb_l{margin:5px 0}.gssb_c .gsc-completion-container{position:static}.gssb_c{z-index:5000}.gsc-completion-container table{background:transparent;font-size:inherit;font-family:inherit}.gssb_c > tbody > tr,.gssb_c > tbody > tr > td,.gssb_d,.gssb_d > tbody > tr,.gssb_d > tbody > tr > td,.gssb_e,.gssb_e > tbody > tr,.gssb_e > tbody > tr > td{padding:0;margin:0;border:0}.gssb_a table,.gssb_a table tr,.gssb_a table tr td{padding:0;margin:0;border:0}</style><link href="qtqml-syntax-objectattributes_files/sbi.css" rel="stylesheet" type="text/css" id="sbi-style">
+<link rel="stylesheet" href="qtqml-syntax-objectattributes_files/defaulten_002.css" type="text/css">
+</head>
+<body>
+
+<div class="main">
+<div class="main-rounded">
+
+<div class="content">
+    <div class="line">
+        <div class="content mainContent">
+
+<div class="context">
+<h1 class="title">QML  对象特性(Attributes)</h1>
+<span class="subtitle"></span>
+<!-- $$$qtqml-syntax-objectattributes.html-description -->
+<div class="descr"> <a name="details"></a>
+<p>每个QML对象类型都已经定义了一组特性.每个对象类型的实例被创建的时候也具有在对象类型里定义的所有特性. 
+	可以指定几种不同类型的特性,下面分别说明.</p>
+<a name="attributes-in-object-declarations"></a>
+<h2 id="attributes-in-object-declarations">对象声明里的特性(Attributes)</h2>
+<p>QML文档中的<a href="QML Syntax Basics _ Qt QML 5.4_zh.htm#object-declarations">对象声明</a>
+ 可以定义新类型. 它也声明了将要被实例化的新类型的对象层次结构.</p>
+<p>QML 对象类型特性类型如下所示:</p>
+<ul>
+<li><i>id</i> 特性</li>
+<li>属性(property) 特性</li>
+<li>信号(signal) 特性</li>
+<li>信号处理器(signal handler) 特性</li>
+<li>方法(method) 特性</li>
+<li>附加属性和附加信号处理器属性</li>
+</ul>
+<p>这些属性的细节讨论如下.</p>
+<a name="the-id-attribute"></a>
+<h3><i>id</i>特性</h3>
+<p>每个QML对象类型都一定有一个<i>id</i>特性. 这个特性是由语言自身提供的,并且不能被任何QML对象类型从新定义或者覆盖 .</p>
+<p>可以给对象实例的<i>id</i>特性赋值这样对象就被标识,可以被其他对象来引用.<code>id</code>
+ 必须以小写字母或者下划线开始 不能包含字母数字和下划线以外的其他符号.</p>
+<p>下面是一个 <a href="http://doc.qt.io/qt-5/qml-qtquick-textinput.html">TextInput</a> 对象和 <a href="http://doc.qt.io/qt-5/qtquick-releasenotes.html#text">Text</a> 对象.  <a href="http://doc.qt.io/qt-5/qml-qtquick-textinput.html">TextInput</a> 对象的 <code>id</code> 值设置为"myTextInput".  <a href="http://doc.qt.io/qt-5/qtquick-releasenotes.html#text">Text</a> 设置它的<code>text</code> 属性(property)值引用<a href="http://doc.qt.io/qt-5/qml-qtquick-textinput.html">TextInput</a>的<code>text</code> 属性(property) , 注意引用语法 <code>myTextInput.text</code>. 这样这两个items都显示一样的文本:</p>
+<pre class="qml">import QtQuick 2.0
+
+<span class="type"><a href="http://doc.qt.io/qt-5/qml-qtquick-column.html">Column</a></span> {
+    <span class="name">width</span>: <span class="number">200</span>; <span class="name">height</span>: <span class="number">200</span>
+
+    <span class="type"><a href="http://doc.qt.io/qt-5/qml-qtquick-textinput.html">TextInput</a></span> { <span class="name">id</span>: <span class="name">myTextInput</span>; <span class="name">text</span>: <span class="string">"Hello World"</span> }
+
+    <span class="type"><a href="http://doc.qt.io/qt-5/qml-qtquick-text.html">Text</a></span> { <span class="name">text</span>: <span class="name">myTextInput</span>.<span class="name">text</span> }
+}</pre>
+<p>一个对象在声明它的<i>组件(component)范围 </i>内任何地方都可以通过它的 <code>id</code>来引用 . 因此,<code>id</code> 的值必须在组件范围内必须是独一无二的.参看 <a href="http://doc.qt.io/qt-5/qtqml-documents-scope.html">范围和名称解析</a> 了解更多信息.</p>
+<p>只要一个对象实例被创建,它的<i>id</i> 值特性不能被改变了. 看起来很像平常的属性(property), <code>id</code> 特性(attribute) <b>不是</b> 一个平常的<code>属性(property)</code> 特性(attribute), 而是有特定的语义; 比如,不能在上面的代码里如下访问<code>myTextInput.id</code> </p>
+<a name="property-attributes"></a>
+<h3>属性(Property) 特性</h3>
+<p>一个属性(property)是一个对象的特性，可以赋静态值或者绑定到一个动态表达式.
+一个属性(property)的值可以被其他对象读取,一般它也可以被其他对象修改,除非特别
+的QML类型显式的不允许修改特定的属性(property)</p>
+<a name="defining-property-attributes"></a>
+<h4>定义属性( Property) 特性</h4>
+<p>可以在C++中通过注册一个class的一个<a href="http://doc.qt.io/qt-5/qobject.html#Q_PROPERTY">Q_PROPERTY</a>在QML类型系统中注册来定义一个类型的属性(property)
+换一种方法，定制对象类型的属性(property)可以在QML文档中通过以下对象声明语法来定义:
+:</p>
+<pre class="cpp">    <span class="operator">[</span><span class="keyword">default</span><span class="operator">]</span> property <span class="operator">&lt;</span>propertyType<span class="operator">&gt;</span> <span class="operator">&lt;</span>propertyName<span class="operator">&gt;</span></pre>
+<p>通过这种方式对象声明可以<a href="http://doc.qt.io/qt-5/qtqml-typesystem-objecttypes.html#defining-object-types-from-qml">暴露特殊的值 </a>给外部的对象或者维护一些内部状态更加容.</p>
+<p>属性(Property)命名必须开始以小写字母开始而且只能包含字母，数字和下划线。<a href="https://developer.mozilla.org/en/JavaScript/Reference/Reserved_Words">Javascript保留关键字</a>
+做属性(property)名字也是不合法的.<code>default</code>关键字是可选的,修改声明的属性(property)语义 .. 参看下一节<a href="http://doc.qt.io/qt-5/qtqml-syntax-objectattributes.html#default-properties">default 属性(properties)</a>了解更多<code>default</code> 属性(property)修饰符的内容 .</p>
+<p>声明一个定制的属性(property)隐含给该属性建立了一个值可变(value-change) <a href="http://doc.qt.io/qt-5/qtqml-syntax-objectattributes.html#signal-attributes">信号(signal)</a>,以及关联的<a href="http://doc.qt.io/qt-5/qtqml-syntax-objectattributes.html#signal-handler-attributes">信号处理器(signal handler)</a> 形式为<i>on&lt;PropertyName&gt;Changed</i>, 这里的 <i>&lt;PropertyName&gt;</i>是属性(property)的名字它的第一个字母被大写.</p>
+<p>如例，下面对象声明定义了一个新类型，它继承自Rectangle类型.它有两个新的属性(property),
+同时实现了一个 <a href="http://doc.qt.io/qt-5/qtqml-syntax-objectattributes.html#signal-handler-attributes">信号处理器</a>  :</p>
+<pre class="qml"><span class="type"><a href="http://doc.qt.io/qt-5/qml-qtquick-rectangle.html">Rectangle</a></span> {
+    property <span class="type">color</span> <span class="name">previousColor</span>
+    property <span class="type">color</span> <span class="name">nextColor</span>
+    <span class="name">onNextColorChanged</span>: <span class="name">console</span>.<span class="name">log</span>(<span class="string">"The next color will be: "</span> <span class="operator">+</span> <span class="name">nextColor</span>.<span class="name">toString</span>())
+}</pre>
+<a name="valid-types-in-custom-property-definitions"></a>
+<h5>定制属性(Property)合法的类型</h5>
+<p>所有<a href="http://doc.qt.io/qt-5/qtqml-typesystem-basictypes.html">QML基本类型</a>除了<a href="http://doc.qt.io/qt-5/qml-enumeration.html">枚举(enumeration)</a>类型之外都可以用于定制属性(property)类型. 如下都是合法的属性(property)声明:</p>
+<pre class="qml"><span class="type"><a href="http://doc.qt.io/qt-5/qml-qtquick-item.html">Item</a></span> {
+    property <span class="type">int</span> <span class="name">someNumber</span>
+    property <span class="type">string</span> <span class="name">someString</span>
+    property <span class="type">url</span> <span class="name">someUrl</span>
+}</pre>
+<p>枚举(Enumeration)值是简单的数字值可以用一个 <a href="http://doc.qt.io/qt-5/qml-int.html">整数(int)</a>类型代替引用.)</p>
+<p>一些有<code>QtQuick</code> 模块提供的基本类型除非模块被import否则不能用于属性(property)类型. 参看<a href="http://doc.qt.io/qt-5/qtqml-typesystem-basictypes.html">QML基本类型</a> 文档获知更多细节.</p>
+<p>说明 <a href="http://doc.qt.io/qt-5/qml-var.html">var</a> 基本类型是一个泛型的占位符,可以处理任何类型的值，包括lists和Object:</p>
+<pre class="cpp">property var someNumber: <span class="number">1.5</span>
+property var someString: <span class="string">"abc"</span>
+property var someBool: <span class="keyword">true</span>
+property var someList: <span class="operator">[</span><span class="number">1</span><span class="operator">,</span> <span class="number">2</span><span class="operator">,</span> <span class="string">"three"</span><span class="operator">,</span> <span class="string">"four"</span><span class="operator">]</span>
+property var someObject: Rectangle { width: <span class="number">100</span>; height: <span class="number">100</span>; color: <span class="string">"red"</span> }</pre>
+<p>另外,任何<a href="http://doc.qt.io/qt-5/qtqml-typesystem-objecttypes.html">QML 对象类型</a> 也可以用于属性(property)类型. 比如:</p>
+<pre class="cpp">property Item someItem
+property Rectangle someRectangle</pre>
+<p>这也适用于<a href="http://doc.qt.io/qt-5/qtqml-typesystem-objecttypes.html#defining-object-types-from-qml">定制 QML类型</a>
+	如果QML类型定义的文件名是<code>ColorfulButton.qml</code> (在目录下被client import),那么属性(property)类型<code>ColorfulButton</code>也是合法的.</p>
+<a name="assigning-values-to-property-attributes"></a>
+<h4>给属性(Property)特性赋值</h4>
+<p>对象实例的属性(property)值可以用两种独立的方法来指定:</p>
+<ul>
+<li>在初始化的时候赋值</li>
+<li>命令赋值</li>
+</ul>
+<p>在这些方法中,值要么是<i>静态(static)</i>值或者是<i>绑定表达式(binding expression)</i>值.</p>
+<a name="value-assignment-on-initialization"></a>
+<h5>在初始化的时候赋值</h5>
+<p>初始化时赋值的语法:</p>
+<pre class="cpp">    <span class="operator">&lt;</span>propertyName<span class="operator">&gt;</span> : <span class="operator">&lt;</span>value<span class="operator">&gt;</span></pre>
+<p>如果愿意的话，初始化赋值可以在对象声明的时候结合属性(property)定义.这种情况下赋值语法变成:</p>
+<pre class="cpp">    <span class="operator">[</span><span class="keyword">default</span><span class="operator">]</span> property <span class="operator">&lt;</span>propertyType<span class="operator">&gt;</span> <span class="operator">&lt;</span>propertyName<span class="operator">&gt;</span> : <span class="operator">&lt;</span>value<span class="operator">&gt;</span></pre>
+<p>属性(property)值初始化例子:</p>
+<pre class="qml">import QtQuick 2.0
+
+<span class="type"><a href="http://doc.qt.io/qt-5/qml-qtquick-rectangle.html">Rectangle</a></span> {
+    <span class="name">color</span>: <span class="string">"red"</span>
+    property <span class="type">color</span> <span class="name">nextColor</span>: <span class="string">"blue"</span> <span class="comment">// combined property declaration and initialization</span>
+}</pre>
+<a name="imperative-value-assignment"></a>
+<h5>命令赋值</h5>
+<p>命令赋值是属性(property)值(要么是静态值要么是绑定表达式)是赋值是通过命令式的JavaScript代码. 
+	命令赋值的语法就是JavaScript赋值操作符,如下所示::</p>
+<pre class="cpp">    <span class="operator">[</span><span class="operator">&lt;</span>objectId<span class="operator">&gt;</span><span class="operator">.</span><span class="operator">]</span><span class="operator">&lt;</span>propertyName<span class="operator">&gt;</span> <span class="operator">=</span> value</pre>
+<p>一个命令赋值的例子如下:</p>
+<pre class="qml">import QtQuick 2.0
+
+<span class="type"><a href="http://doc.qt.io/qt-5/qml-qtquick-rectangle.html">Rectangle</a></span> {
+    <span class="name">id</span>: <span class="name">rect</span>
+    <span class="name">Component</span>.onCompleted: {
+        <span class="name">rect</span>.<span class="name">color</span> <span class="operator">=</span> <span class="string">"red"</span>
+    }
+}</pre>
+<a name="static-values-and-binding-expression-values"></a>
+<h4>静态值和绑定表达式值</h4>
+<p>如前所说,有两种类型的值可以赋值给属性(property): <i>静态(static)</i>值, 和<i>绑定表达式(binding expression)</i>值. 后面也叫做<a href="http://doc.qt.io/qt-5/qtqml-syntax-propertybinding.html">属性(property)绑定</a>.</p>
+<div class="table"><table class="generic">
+ <thead><tr class="qt-style"><th>　类型　</th><th>　语义　</th></tr></thead>
+<tbody><tr class="odd" valign="top"><td>静态值</td><td>常量值不依赖其他属性(properties).</td></tr>
+<tr class="even" valign="top"><td>绑定表达式</td><td>
+JavaScript表达式描述了属性(property)和其他属性(property)的关系.这个表达式里的变量叫做属性(property)
+<i>依赖(dependencies)</i>.<p>QML引擎保证属性(property)和它的依赖之间的关系 . 
+	当任何依赖的值改变时,QML引擎自动重新评估绑定表达式并将新的结果赋予属性(property)</p>
+</td></tr>
+</tbody></table></div>
+<p>这里是一个例子展示这两种值赋予属性(properties):</p>
+<pre class="qml">import QtQuick 2.0
+
+<span class="type"><a href="http://doc.qt.io/qt-5/qml-qtquick-rectangle.html">Rectangle</a></span> {
+    <span class="comment">// 这两个都是初始化的时候赋予了静态值</span>
+    <span class="name">width</span>: <span class="number">400</span>
+    <span class="name">height</span>: <span class="number">200</span>
+
+    <span class="type"><a href="http://doc.qt.io/qt-5/qml-qtquick-rectangle.html">Rectangle</a></span> {
+        <span class="comment">//这两个都是初始化的时候赋予了绑定表达式</span>
+        <span class="name">width</span>: <span class="name">parent</span>.<span class="name">width</span> <span class="operator">/</span> <span class="number">2</span>
+        <span class="name">height</span>: <span class="name">parent</span>.<span class="name">height</span>
+    }
+}</pre>
+<p><b>说明: </b>命令式绑定表达式赋值, 绑定表达式必须包含在函数里然后传递进<a href="http://doc.qt.io/qt-5/qml-qtqml-qt.html#binding-method">Qt.binding()</a>,
+ 然后将返回的值赋予属性(property). 相反的, Qt.binding()在上面初始化的绑定表达式里可以不用.参看 <a href="http://doc.qt.io/qt-5/qtqml-syntax-propertybinding.html">属性(Property)绑定</a>更多细节.</p><a name="type-safety"></a>
+<h4>类型安全</h4>
+<p>属性(Properties)是类型安全的.一个属性(property)可以只要赋值匹配属性(property)类型.</p>
+<p>比如,如果属性(property)是实数,如果你赋值字符串给它,你就会得到一个错误:</p>
+<pre class="cpp">property <span class="type">int</span> volume: <span class="string">"four"</span>  <span class="comment">// 产生一个错误;该属性对象将不会被载入</span></pre>
+<p>同样如果属性(property)在运行时被赋予了错误的类型值,那么新值将不会被赋予,一个错误将产生.</p>
+<p>一些属性(property)类型没有自然的值表达,那么这些属性(property)类型将会被QML 引擎自动执行
+string-to-typed-value转换. 比如属性(properties)<code>color</code>类型保存colors而不是字符串, 
+你可以赋值一个字符串<code>"red"</code>给color属性,而不会有错误产生.</p>
+<p>参看<a href="http://doc.qt.io/qt-5/qtqml-typesystem-basictypes.html">QML基本类型</a> 列出了默认支持的属性(propeties)类型. 另外任何<a href="http://doc.qt.io/qt-5/qtqml-typesystem-objecttypes.html">QML对象类型</a>都可以用于属性(property)类型.</p>
+<a name="special-property-types"></a>
+<h4>特殊的属性(Property)类型</h4>
+<a name="object-list-property-attributes"></a>
+<h5>对象列表(List)属性(Property)特性( Attributes)</h5>
+<p><a href="http://doc.qt.io/qt-5/qml-list.html">列表(list)</a> 类型 
+属性(property)可以赋予一个QML对象类型列表(list)值. 定义一个对象列表(list)的语法是逗号分割被中括号包围的列表(list):</p>
+<pre class="cpp">    <span class="operator">[</span> <span class="operator">&lt;</span>item <span class="number">1</span><span class="operator">&gt;</span><span class="operator">,</span> <span class="operator">&lt;</span>item <span class="number">2</span><span class="operator">&gt;</span><span class="operator">,</span> <span class="operator">.</span><span class="operator">.</span><span class="operator">.</span> <span class="operator">]</span></pre>
+<p>举例,<a href="http://doc.qt.io/qt-5/qml-qtquick-item.html">Item</a>类型有一个<a href="http://doc.qt.io/qt-5/qml-qtquick-item.html#states-prop">states</a>属性(property)用于控制一个<a href="http://doc.qt.io/qt-5/qml-qtqml-statemachine-state.html">State</a>类型对象的列表(list). 下面代码初始化列表(list)属性(property)值为三个<a href="http://doc.qt.io/qt-5/qml-qtqml-statemachine-state.html">State</a>对象:</p>
+<pre class="qml">import QtQuick 2.0
+
+<span class="type"><a href="http://doc.qt.io/qt-5/qml-qtquick-item.html">Item</a></span> {
+    <span class="name">states</span>: [
+        <span class="type"><a href="http://doc.qt.io/qt-5/qml-qtqml-statemachine-state.html">State</a></span> { <span class="name">name</span>: <span class="string">"loading"</span> },
+        <span class="type"><a href="http://doc.qt.io/qt-5/qml-qtqml-statemachine-state.html">State</a></span> { <span class="name">name</span>: <span class="string">"running"</span> },
+        <span class="type"><a href="http://doc.qt.io/qt-5/qml-qtqml-statemachine-state.html">State</a></span> { <span class="name">name</span>: <span class="string">"stopped"</span> }
+    ]
+}</pre>
+<p>如果列表(list)包含单一项目,方括号可以省略掉:</p>
+<pre class="qml">import QtQuick 2.0
+
+<span class="type"><a href="http://doc.qt.io/qt-5/qml-qtquick-item.html">Item</a></span> {
+    <span class="name">states</span>: <span class="name">State</span> { <span class="name">name</span>: <span class="string">"running"</span> }
+}</pre>
+<p> <a href="http://doc.qt.io/qt-5/qml-list.html">list</a>类型的属性(property)可以在对象声明的时候通过下列语法指定:</p>
+<pre class="cpp">    <span class="operator">[</span><span class="keyword">default</span><span class="operator">]</span> property list<span class="operator">&lt;</span><span class="operator">&lt;</span>objectType<span class="operator">&gt;</span><span class="operator">&gt;</span> propertyName</pre>
+<p>并且像其他属性(property)声明,属性(property)初始化可以用下列语法结合属性(property)声明:</p>
+<pre class="cpp">    <span class="operator">[</span><span class="keyword">default</span><span class="operator">]</span> property list<span class="operator">&lt;</span><span class="operator">&lt;</span>objectType<span class="operator">&gt;</span><span class="operator">&gt;</span> propertyName: <span class="operator">&lt;</span>value<span class="operator">&gt;</span></pre>
+<p>一个列表(list)属性(property)声明例子如下:</p>
+<pre class="qml">import QtQuick 2.0
+
+<span class="type"><a href="http://doc.qt.io/qt-5/qml-qtquick-rectangle.html">Rectangle</a></span> {
+    <span class="comment">// 声明没有初始化</span>
+    property list&lt;<span class="type"><a href="http://doc.qt.io/qt-5/qml-qtquick-rectangle.html">Rectangle</a></span>&gt; <span class="name">siblingRects</span>
+
+    <span class="comment">// 声明结合初始化</span>
+    property list&lt;<span class="type"><a href="http://doc.qt.io/qt-5/qml-qtquick-rectangle.html">Rectangle</a></span>&gt; <span class="name">childRects</span>: [
+        <span class="type"><a href="http://doc.qt.io/qt-5/qml-qtquick-rectangle.html">Rectangle</a></span> { <span class="name">color</span>: <span class="string">"red"</span> },
+        <span class="type"><a href="http://doc.qt.io/qt-5/qml-qtquick-rectangle.html">Rectangle</a></span> { <span class="name">color</span>: <span class="string">"blue"</span>}
+    ]
+}</pre>
+<p>如果你希望声明一个属性(property)来保存一个列表(list)而其值不一定是OML 对象类型值,你可以声明通过<a href="http://doc.qt.io/qt-5/qml-var.html">var</a>属性(property)来代替.</p>
+<a name="grouped-properties"></a>
+<h5>分组属性(Properties)</h5>
+<p>某些情况下属性(properties)包含逻辑子属性(property)组特性(attributes)
+. 这些子属性(property)特性(attributes)可以通过使用点.表示法或者组表示法来赋值.</p>
+<p>比如<a href="http://doc.qt.io/qt-5/qtquick-releasenotes.html#text">Text</a>类型有一个<a href="http://doc.qt.io/qt-5/qml-qtquick-text.html#font.family-prop">font</a> 组属性(property). 如下第一个<a href="http://doc.qt.io/qt-5/qtquick-releasenotes.html#text">Text</a> 对象初始化它的<code>font</code>值使用点.表示法,
+	第二个使用了组表示法:</p>
+<pre class="cpp">Text {
+    <span class="comment">//点表示法</span>
+    font<span class="operator">.</span>pixelSize: <span class="number">12</span>
+    font<span class="operator">.</span>b: <span class="keyword">true</span>
+}
+
+Text {
+    <span class="comment">//组表示法</span>
+    font { pixelSize: <span class="number">12</span>; b: <span class="keyword">true</span> }
+}</pre>
+<p>组属性(property)类型是有子属性的基本类型. 一些这样基本类型是有QML语言提供的,
+	同时其他仅仅在输入Qt Quick 模块的时候可以使用. 参看文档关于 <a href="http://doc.qt.io/qt-5/qtqml-typesystem-basictypes.html">QML基本类型</a>得到更多的信息.</p>
+<a name="property-aliases"></a>
+<h4>属性(Property)别名</h4>
+<p>属性(Property)别名是属性(properties)用来保持其他属性(property)的引用. 
+	不像正常的属性(property)定义, 它会申请一个新的，独一无二的存储空间给属性(property),
+	 属性(property)别名连接新声明的属性(也称作别名属性(property))直接引用到一个已经存在的属性(property)(也叫做被别名属性(property)).</p>
+<p>属性(property)别名声明看起来像一个正常的属性定义, 除了它要求<code>alias</code>关键词代替属性(property)类型,并且要求右手边的属性(property)声明必须是一个合法的别名引用:</p>
+<pre class="cpp"><span class="operator">[</span><span class="keyword">default</span><span class="operator">]</span> property alias <span class="operator">&lt;</span>name<span class="operator">&gt;</span>: <span class="operator">&lt;</span>alias reference<span class="operator">&gt;</span></pre>
+<p>Unlike an ordinary property, an alias can only refer to a object, or the property of a object, that is within the scope of the <a href="http://doc.qt.io/qt-5/qtqml-typesystem-objecttypes.html">type</a>
+ within which the alias is declared. It cannot contain arbitrary 
+JavaScript expressions and it cannot refer to objects declared outside 
+of the scope of its type. Also note the <i>alias reference</i> is not 
+optional, unlike the optional default value for an ordinary property; 
+the alias reference must be provided when the alias is first declared.</p>
+<p>For example, below is a <code>Button</code> type with a <code>buttonText</code> aliased property which is connected to the <code>text</code> object of the <a href="http://doc.qt.io/qt-5/qtquick-releasenotes.html#text">Text</a> child:</p>
+<pre class="qml"><span class="comment">// Button.qml</span>
+import QtQuick 2.0
+
+<span class="type"><a href="http://doc.qt.io/qt-5/qml-qtquick-rectangle.html">Rectangle</a></span> {
+    property <span class="type">alias</span> <span class="name">buttonText</span>: <span class="name">textItem</span>.<span class="name">text</span>
+
+    <span class="name">width</span>: <span class="number">100</span>; <span class="name">height</span>: <span class="number">30</span>; <span class="name">color</span>: <span class="string">"yellow"</span>
+
+    <span class="type"><a href="http://doc.qt.io/qt-5/qml-qtquick-text.html">Text</a></span> { <span class="name">id</span>: <span class="name">textItem</span> }
+}</pre>
+<p>The following code would create a <code>Button</code> with a defined text string for the child <a href="http://doc.qt.io/qt-5/qtquick-releasenotes.html#text">Text</a> object:</p>
+<pre class="qml"><span class="type"><a href="http://doc.qt.io/qt-5/qml-qtquick-controls-button.html">Button</a></span> { <span class="name">buttonText</span>: <span class="string">"Click Me"</span> }</pre>
+<p>Here, modifying <code>buttonText</code> directly modifies the textItem.text value; it does not change some other value that then updates textItem.text. If <code>buttonText</code>
+ was not an alias, changing its value would not actually change the 
+displayed text at all, as property bindings are not bi-directional: the <code>buttonText</code> value would have changed if textItem.text was changed, but not the other way around.</p>
+<a name="considerations-for-property-aliases"></a>
+<h5>Considerations for Property Aliases</h5>
+<p>Aliases are only activated once a component has been fully 
+initialized. An error is generated when an uninitialized alias is 
+referenced. Likewise, aliasing an aliasing property will also result in 
+an error.</p>
+<pre class="qml">property <span class="type">alias</span> <span class="name">widgetLabel</span>: <span class="name">label</span>
+
+<span class="comment">//will generate an error</span>
+<span class="comment">//widgetLabel.text: "Initial text"</span>
+
+<span class="comment">//will generate an error</span>
+<span class="comment">//property alias widgetLabelText: widgetLabel.text</span>
+
+<span class="name">Component</span>.onCompleted: <span class="name">widgetLabel</span>.<span class="name">text</span> <span class="operator">=</span> <span class="string">"Alias completed Initialization"</span></pre>
+<p>When importing a <a href="http://doc.qt.io/qt-5/qtqml-typesystem-objecttypes.html">QML object type</a>
+ with a property alias in the root object, however, the property appear 
+as a regular Qt property and consequently can be used in alias 
+references.</p>
+<p>It is possible for an aliasing property to have the same name as an 
+existing property, effectively overwriting the existing property. For 
+example, the following QML type has a <code>color</code> alias property, named the same as the built-in <a href="http://doc.qt.io/qt-5/qml-qtquick-rectangle.html#color-prop">Rectangle::color</a> property:</p>
+<pre class="qml"><span class="type"><a href="http://doc.qt.io/qt-5/qml-qtquick-rectangle.html">Rectangle</a></span> {
+    <span class="name">id</span>: <span class="name">coloredrectangle</span>
+    property <span class="type">alias</span> <span class="name">color</span>: <span class="name">bluerectangle</span>.<span class="name">color</span>
+    <span class="name">color</span>: <span class="string">"red"</span>
+
+    <span class="type"><a href="http://doc.qt.io/qt-5/qml-qtquick-rectangle.html">Rectangle</a></span> {
+        <span class="name">id</span>: <span class="name">bluerectangle</span>
+        <span class="name">color</span>: <span class="string">"#1234ff"</span>
+    }
+
+    <span class="name">Component</span>.onCompleted: {
+        <span class="name">console</span>.<span class="name">log</span> (<span class="name">coloredrectangle</span>.<span class="name">color</span>)    <span class="comment">//prints "#1234ff"</span>
+        <span class="name">setInternalColor</span>()
+        <span class="name">console</span>.<span class="name">log</span> (<span class="name">coloredrectangle</span>.<span class="name">color</span>)    <span class="comment">//prints "#111111"</span>
+        <span class="name">coloredrectangle</span>.<span class="name">color</span> <span class="operator">=</span> <span class="string">"#884646"</span>
+        <span class="name">console</span>.<span class="name">log</span> (<span class="name">coloredrectangle</span>.<span class="name">color</span>)    <span class="comment">//prints #884646</span>
+    }
+
+    <span class="comment">//internal function that has access to internal properties</span>
+    <span class="keyword">function</span> <span class="name">setInternalColor</span>() {
+        <span class="name">color</span> <span class="operator">=</span> <span class="string">"#111111"</span>
+    }
+}</pre>
+<p>Any object that use this type and refer to its <code>color</code> property will be referring to the alias rather than the ordinary <a href="http://doc.qt.io/qt-5/qml-qtquick-rectangle.html#color-prop">Rectangle::color</a> property. Internally, however, the red can correctly set its <code>color</code> property and refer to the actual defined property rather than the alias.</p>
+<a name="default-properties"></a>
+<h4>Default Properties</h4>
+<p>An object definition can have a single <i>default</i> property. A 
+default property is the property to which a value is assigned if an 
+object is declared within another object's definition without declaring 
+it as a value for a particular property.</p>
+<p>Declaring a property with the optional <code>default</code> keyword marks it as the default property. For example, say there is a file MyLabel.qml with a default property <code>someText</code>:</p>
+<pre class="qml"><span class="comment">// MyLabel.qml</span>
+import QtQuick 2.0
+
+<span class="type"><a href="http://doc.qt.io/qt-5/qml-qtquick-text.html">Text</a></span> {
+    default property <span class="type">var</span> <span class="name">someText</span>
+
+    <span class="name">text</span>: <span class="string">"Hello, "</span> <span class="operator">+</span> <span class="name">someText</span>.<span class="name">text</span>
+}</pre>
+<p>The <code>someText</code> value could be assigned to in a <code>MyLabel</code> object definition, like this:</p>
+<pre class="qml"><span class="type">MyLabel</span> {
+    <span class="type"><a href="http://doc.qt.io/qt-5/qml-qtquick-text.html">Text</a></span> { <span class="name">text</span>: <span class="string">"world!"</span> }
+}</pre>
+<p>This has exactly the same effect as the following:</p>
+<pre class="qml"><span class="type">MyLabel</span> {
+    <span class="name">someText</span>: <span class="name">Text</span> { <span class="name">text</span>: <span class="string">"world!"</span> }
+}</pre>
+<p>However, since the <code>someText</code> property has been marked as the default property, it is not necessary to explicitly assign the <a href="http://doc.qt.io/qt-5/qtquick-releasenotes.html#text">Text</a> object to this property.</p>
+<p>You will notice that child objects can be added to any <a href="http://doc.qt.io/qt-5/qml-qtquick-item.html">Item</a>-based type without explicitly adding them to the <a href="http://doc.qt.io/qt-5/qml-qtquick-item.html#children-prop">children</a> property. This is because the default property of <a href="http://doc.qt.io/qt-5/qml-qtquick-item.html">Item</a> is its <code>data</code> property, and any items added to this list for an <a href="http://doc.qt.io/qt-5/qml-qtquick-item.html">Item</a> are automatically added to its list of <a href="http://doc.qt.io/qt-5/qml-qtquick-item.html#children-prop">children</a>.</p>
+<p>Default properties can be useful for reassigning the children of an item. See the <a href="http://doc.qt.io/qt-5/qtquick-customitems-tabwidget-example.html">TabWidget Example</a>, which uses a default property to automatically reassign children of the <a href="http://doc.qt.io/qt-5/qml-uicomponents-tabwidget.html">TabWidget</a> as children of an inner <a href="http://doc.qt.io/qt-5/qml-qtquick-listview.html">ListView</a>.</p>
+<a name="read-only-properties"></a>
+<h4>Read-Only Properties</h4>
+<p>An object declaration may define a read-only property using the <code>readonly</code> keyword, with the following syntax:</p>
+<pre class="cpp">    readonly property <span class="operator">&lt;</span>propertyType<span class="operator">&gt;</span> <span class="operator">&lt;</span>propertyName<span class="operator">&gt;</span> : <span class="operator">&lt;</span>initialValue<span class="operator">&gt;</span></pre>
+<p>Read-only properties must be assigned a value on initialization. 
+After a read-only property is initialized, it no longer possible to give
+ it a value, whether from imperative code or otherwise.</p>
+<p>For example, the code in the <code>Component.onCompleted</code> block below is invalid:</p>
+<pre class="qml"><span class="type"><a href="http://doc.qt.io/qt-5/qml-qtquick-item.html">Item</a></span> {
+    readonly property <span class="type">int</span> <span class="name">someNumber</span>: <span class="number">10</span>
+
+    <span class="name">Component</span>.onCompleted: <span class="name">someNumber</span> <span class="operator">=</span> <span class="number">20</span>  <span class="comment">// doesn't work, causes an error</span>
+}</pre>
+<p><b>Note: </b>A read-only property cannot also be a <a href="http://doc.qt.io/qt-5/qtqml-syntax-objectattributes.html#default-properties">default</a> or <a href="http://doc.qt.io/qt-5/qtqml-syntax-objectattributes.html#property-aliases">alias</a> property.</p><a name="property-modifier-objects"></a>
+<h4>Property Modifier Objects</h4>
+<p>Properties can have <a href="http://doc.qt.io/qt-5/qtqml-cppintegration-definetypes.html#property-modifier-types">property value modifier objects</a>
+ associated with them. The syntax for declaring an instance of a 
+property modifier type associated with a particular property is as 
+follows:</p>
+<pre class="cpp"><span class="operator">&lt;</span>PropertyModifierTypeName<span class="operator">&gt;</span> on <span class="operator">&lt;</span>propertyName<span class="operator">&gt;</span> {
+    <span class="comment">// attributes of the object instance</span>
+}</pre>
+<p>It is important to note that the above syntax is in fact an <a href="http://doc.qt.io/qt-5/qtqml-syntax-basics.html#object-declarations">object declaration</a> which will instantiate an object which acts on a pre-existing property.</p>
+<p>Certain property modifier types may only be applicable to specific 
+property types, however this is not enforced by the language. For 
+example, the <code>NumberAnimation</code> type provided by <code>QtQuick</code> will only animate numeric-type (such as <code>int</code> or <code>real</code>) properties. Attempting to use a <code>NumberAnimation</code>
+ with non-numeric property will not result in an error, however the 
+non-numeric property will not be animated. The behavior of a property 
+modifier type when associated with a particular property type is defined
+ by its implementation.</p>
+<a name="signal-attributes"></a>
+<h3>Signal Attributes</h3>
+<p>A signal is a notification from an object that some event has 
+occurred: for example, a property has changed, an animation has started 
+or stopped, or when an image has been downloaded. The <a href="http://doc.qt.io/qt-5/qml-qtquick-mousearea.html">MouseArea</a> type, for example, has a <a href="http://doc.qt.io/qt-5/qml-qtquick-mousearea.html#clicked-signal">clicked</a> signal that is emitted when the user clicks within the mouse area.</p>
+<p>An object can be notified through a <a href="http://doc.qt.io/qt-5/qtqml-syntax-objectattributes.html#signal-handler-attributes">signal handler</a> whenever it a particular signal is emitted. A signal handler is declared with the syntax <i>on&lt;Signal&gt;</i> where <i>&lt;Signal&gt;</i>
+ is the name of the signal, with the first letter capitalized. The 
+signal handler must be declared within the definition of the object that
+ emits the signal, and the handler should contain the block of 
+JavaScript code to be executed when the signal handler is invoked.</p>
+<p>For example, the <i>onClicked</i> signal handler below is declared within the <a href="http://doc.qt.io/qt-5/qml-qtquick-mousearea.html">MouseArea</a> object definition, and is invoked when the <a href="http://doc.qt.io/qt-5/qml-qtquick-mousearea.html">MouseArea</a> is clicked, causing a console message to be printed:</p>
+<pre class="qml">import QtQuick 2.0
+
+<span class="type"><a href="http://doc.qt.io/qt-5/qml-qtquick-item.html">Item</a></span> {
+    <span class="name">width</span>: <span class="number">100</span>; <span class="name">height</span>: <span class="number">100</span>
+
+    <span class="type"><a href="http://doc.qt.io/qt-5/qml-qtquick-mousearea.html">MouseArea</a></span> {
+        <span class="name">anchors</span>.fill: <span class="name">parent</span>
+        <span class="name">onClicked</span>: {
+            <span class="name">console</span>.<span class="name">log</span>(<span class="string">"Click!"</span>)
+        }
+    }
+}</pre>
+<a name="defining-signal-attributes"></a>
+<h4>Defining Signal Attributes</h4>
+<p>A signal may be defined for a type in C++ by registering a <a href="http://doc.qt.io/qt-5/qobject.html#Q_SIGNAL">Q_SIGNAL</a>
+ of a class which is then registered with the QML type system. 
+Alternatively, a custom signal for an object type may be defined in an 
+object declaration in a QML document with the following syntax:</p>
+<pre class="cpp">    signal <span class="operator">&lt;</span>signalName<span class="operator">&gt;</span><span class="operator">[</span>(<span class="operator">[</span><span class="operator">&lt;</span>type<span class="operator">&gt;</span> <span class="operator">&lt;</span>parameter name<span class="operator">&gt;</span><span class="operator">[</span><span class="operator">,</span> <span class="operator">.</span><span class="operator">.</span><span class="operator">.</span><span class="operator">]</span><span class="operator">]</span>)<span class="operator">]</span></pre>
+<p>Attempting to declare two signals or methods with the same name in 
+the same type block is an error. However, a new signal may reuse the 
+name of an existing signal on the type. (This should be done with 
+caution, as the existing signal may be hidden and become inaccessible.)</p>
+<p>Here are three examples of signal declarations:</p>
+<pre class="qml">import QtQuick 2.0
+
+<span class="type"><a href="http://doc.qt.io/qt-5/qml-qtquick-item.html">Item</a></span> {
+    signal <span class="type">clicked</span>
+    signal <span class="type">hovered</span>()
+    signal <span class="type">actionPerformed</span>(string action, var actionResult)
+}</pre>
+<p>If the signal has no parameters, the "()" brackets are optional. If 
+parameters are used, the parameter types must be declared, as for the <code>string</code> and <code>var</code> arguments for the <code>actionPerformed</code> signal above. The allowed parameter types are the same as those listed under <a href="http://doc.qt.io/qt-5/qtqml-syntax-objectattributes.html#defining-property-attributes">Defining Property Attributes</a> on this page.</p>
+<p>To emit a signal, invoke it as a method. Any relevant <a href="http://doc.qt.io/qt-5/qtqml-syntax-objectattributes.html#signal-handler-attributes">signal handlers</a>
+ will be invoked when the signal is emitted, and handlers can use the 
+defined signal argument names to access the respective arguments.</p>
+<a name="property-change-signals"></a>
+<h4>Property Change Signals</h4>
+<p>QML types also provide built-in <i>property change signals</i> that are emitted whenever a property value changes, as previously described in the section on <a href="http://doc.qt.io/qt-5/qtqml-syntax-objectattributes.html#property-attributes">property attributes</a>. See the upcoming section on <a href="http://doc.qt.io/qt-5/qtqml-syntax-signals.html#property-change-signal-handlers">property change signal handlers</a> for more information about why these signals are useful, and how to use them.</p>
+<a name="signal-handler-attributes"></a>
+<h3>Signal Handler Attributes</h3>
+<p>Signal handlers are a special sort of <a href="http://doc.qt.io/qt-5/qtqml-syntax-objectattributes.html#method-attributes">method attribute</a>,
+ where the method implementation is invoked by the QML engine whenever 
+the associated signal is emitted. Adding a signal to an object 
+definition in QML will automatically add an associated signal handler to
+ the object definition, which has, by default, an empty implementation. 
+Clients can provide an implementation, to implement program logic.</p>
+<p>Consider the following <code>SquareButton</code> type, whose definition is provided in the <code>SquareButton.qml</code> file as shown below, with signals <code>activated</code> and <code>deactivated</code>:</p>
+<pre class="qml"><span class="comment">// SquareButton.qml</span>
+<span class="type"><a href="http://doc.qt.io/qt-5/qml-qtquick-rectangle.html">Rectangle</a></span> {
+    <span class="name">id</span>: <span class="name">root</span>
+
+    signal <span class="type">activated</span>(real xPosition, real yPosition)
+    signal <span class="type">deactivated</span>
+
+    <span class="name">width</span>: <span class="number">100</span>; <span class="name">height</span>: <span class="number">100</span>
+
+    <span class="type"><a href="http://doc.qt.io/qt-5/qml-qtquick-mousearea.html">MouseArea</a></span> {
+        <span class="name">anchors</span>.fill: <span class="name">parent</span>
+        <span class="name">onPressed</span>: <span class="name">root</span>.<span class="name">activated</span>(<span class="name">mouse</span>.<span class="name">x</span>, <span class="name">mouse</span>.<span class="name">y</span>)
+        <span class="name">onRelased</span>: <span class="name">root</span>.<span class="name">deactivated</span>()
+    }
+}</pre>
+<p>These signals could be received by any <code>SquareButton</code> objects in another QML file in the same directory, where implementations for the signal handlers are provided by the client:</p>
+<pre class="qml"><span class="comment">// myapplication.qml</span>
+<span class="type">SquareButton</span> {
+    <span class="name">onActivated</span>: <span class="name">console</span>.<span class="name">log</span>(<span class="string">"Activated at "</span> <span class="operator">+</span> <span class="name">xPosition</span> <span class="operator">+</span> <span class="string">","</span> <span class="operator">+</span> <span class="name">yPosition</span>)
+    <span class="name">onDeactivated</span>: <span class="name">console</span>.<span class="name">log</span>(<span class="string">"Deactivated!"</span>)
+}</pre>
+<p>See the <a href="http://doc.qt.io/qt-5/qtqml-syntax-signals.html">Signal and Handler Event System</a> for more details on use of signals.</p>
+<a name="property-change-signal-handlers"></a>
+<h4>Property Change Signal Handlers</h4>
+<p>Signal handlers for property change signal take the syntax form <i>on&lt;Property&gt;Changed</i> where <i>&lt;Property&gt;</i> is the name of the property, with the first letter capitalized. For example, although the <a href="http://doc.qt.io/qt-5/qml-qtquick-textinput.html">TextInput</a> type documentation does not document a <code>textChanged</code> signal, this signal is implicitly available through the fact that <a href="http://doc.qt.io/qt-5/qml-qtquick-textinput.html">TextInput</a> has a <a href="http://doc.qt.io/qt-5/qml-qtquick-textinput.html#text-prop">text</a> property and so it is possible to write an <code>onTextChanged</code> signal handler to be called whenever this property changes:</p>
+<pre class="qml">import QtQuick 2.0
+
+<span class="type"><a href="http://doc.qt.io/qt-5/qml-qtquick-textinput.html">TextInput</a></span> {
+    <span class="name">text</span>: <span class="string">"Change this!"</span>
+
+    <span class="name">onTextChanged</span>: <span class="name">console</span>.<span class="name">log</span>(<span class="string">"Text has changed to:"</span>, <span class="name">text</span>)
+}</pre>
+<a name="method-attributes"></a>
+<h3>Method Attributes</h3>
+<p>A method of an object type is a function which may be called to 
+perform some processing or trigger further events. A method can be 
+connected to a signal so that it is automatically invoked whenever the 
+signal is emitted. See <a href="http://doc.qt.io/qt-5/qtqml-syntax-signals.html">Signal and Handler Event System</a> for more details.</p>
+<a name="defining-method-attributes"></a>
+<h4>Defining Method Attributes</h4>
+<p>A method may be defined for a type in C++ by tagging a function of a 
+class which is then registered with the QML type system with <a href="http://doc.qt.io/qt-5/qobject.html#Q_INVOKABLE">Q_INVOKABLE</a> or by registering it as a <a href="http://doc.qt.io/qt-5/qobject.html#Q_SLOT">Q_SLOT</a> of the class. Alternatively, a custom method can be added to an object declaration in a QML document with the following syntax:</p>
+<pre class="cpp">    function <span class="operator">&lt;</span>functionName<span class="operator">&gt;</span>(<span class="operator">[</span><span class="operator">&lt;</span>parameterName<span class="operator">&gt;</span><span class="operator">[</span><span class="operator">,</span> <span class="operator">.</span><span class="operator">.</span><span class="operator">.</span><span class="operator">]</span><span class="operator">]</span>) { <span class="operator">&lt;</span>body<span class="operator">&gt;</span> }</pre>
+<p>Methods can be added to a QML type in order to define standalone, 
+reusable blocks of JavaScript code. These methods can be invoked either 
+internally or by external objects.</p>
+<p>Unlike signals, method parameter types do not have to be declared as they default to the <code>var</code> type.</p>
+<p>Attempting to declare two methods or signals with the same name in 
+the same type block is an error. However, a new method may reuse the 
+name of an existing method on the type. (This should be done with 
+caution, as the existing method may be hidden and become inaccessible.)</p>
+<p>Below is a <a href="http://doc.qt.io/qt-5/qml-qtquick-rectangle.html">Rectangle</a> with a <code>calculateHeight()</code> method that is called when assigning the <code>height</code> value:</p>
+<pre class="qml">import QtQuick 2.0
+<span class="type"><a href="http://doc.qt.io/qt-5/qml-qtquick-rectangle.html">Rectangle</a></span> {
+    <span class="name">id</span>: <span class="name">rect</span>
+
+    <span class="keyword">function</span> <span class="name">calculateHeight</span>() {
+        <span class="keyword">return</span> <span class="name">rect</span>.<span class="name">width</span> <span class="operator">/</span> <span class="number">2</span>;
+    }
+
+    <span class="name">width</span>: <span class="number">100</span>
+    <span class="name">height</span>: <span class="name">calculateHeight</span>()
+}</pre>
+<p>If the method has parameters, they are accessible by name within the method. Below, when the <a href="http://doc.qt.io/qt-5/qml-qtquick-mousearea.html">MouseArea</a> is clicked it invokes the <code>moveTo()</code> method which can then refer to the received <code>newX</code> and <code>newY</code> parameters to reposition the text:</p>
+<pre class="qml">import QtQuick 2.0
+
+<span class="type"><a href="http://doc.qt.io/qt-5/qml-qtquick-item.html">Item</a></span> {
+    <span class="name">width</span>: <span class="number">200</span>; <span class="name">height</span>: <span class="number">200</span>
+
+    <span class="type"><a href="http://doc.qt.io/qt-5/qml-qtquick-mousearea.html">MouseArea</a></span> {
+        <span class="name">anchors</span>.fill: <span class="name">parent</span>
+        <span class="name">onClicked</span>: <span class="name">label</span>.<span class="name">moveTo</span>(<span class="name">mouse</span>.<span class="name">x</span>, <span class="name">mouse</span>.<span class="name">y</span>)
+    }
+
+    <span class="type"><a href="http://doc.qt.io/qt-5/qml-qtquick-text.html">Text</a></span> {
+        <span class="name">id</span>: <span class="name">label</span>
+
+        <span class="keyword">function</span> <span class="name">moveTo</span>(<span class="name">newX</span>, newY) {
+            <span class="name">label</span>.<span class="name">x</span> <span class="operator">=</span> <span class="name">newX</span>;
+            <span class="name">label</span>.<span class="name">y</span> <span class="operator">=</span> <span class="name">newY</span>;
+        }
+
+        <span class="name">text</span>: <span class="string">"Move me!"</span>
+    }
+}</pre>
+<a name="attached-properties-and-attached-signal-handlers"></a>
+<h3>Attached Properties and Attached Signal Handlers</h3>
+<p><i>Attached properties</i> and <i>attached signal handlers</i> are 
+mechanisms that enable objects to be annotated with extra properties or 
+signal handlers that are otherwise unavailable to the object. In 
+particular, they allow objects to access properties or signals that are 
+specifically relevant to the individual object.</p>
+<p>A QML type implementation may choose to create an <i>attaching type</i> with particular properties and signals. Instances of this type can then be created and <i>attached</i>
+ to specific objects at run time, allowing those objects to access the 
+properties and signals of the attaching type. These are accessed by 
+prefixing the properties and respective signal handlers with the name of
+ the attaching type.</p>
+<p>References to attached properties and handlers take the following syntax form:</p>
+<pre class="cpp"><span class="operator">&lt;</span>AttachingType<span class="operator">&gt;</span><span class="operator">.</span><span class="operator">&lt;</span>propertyName<span class="operator">&gt;</span>
+<span class="operator">&lt;</span>AttachingType<span class="operator">&gt;</span><span class="operator">.</span>on<span class="operator">&lt;</span>SignalName<span class="operator">&gt;</span></pre>
+<p>For example, the <a href="http://doc.qt.io/qt-5/qml-qtquick-listview.html">ListView</a> type has an attached property <a href="http://doc.qt.io/qt-5/qml-qtquick-listview.html#isCurrentItem-attached-prop">ListView.isCurrentItem</a> that is available to each delegate object in a <a href="http://doc.qt.io/qt-5/qml-qtquick-listview.html">ListView</a>. This can be used by each individual delegate object to determine whether it is the currently selected item in the view:</p>
+<pre class="qml">import QtQuick 2.0
+
+<span class="type"><a href="http://doc.qt.io/qt-5/qml-qtquick-listview.html">ListView</a></span> {
+    <span class="name">width</span>: <span class="number">240</span>; <span class="name">height</span>: <span class="number">320</span>
+    <span class="name">model</span>: <span class="number">3</span>
+    <span class="name">delegate</span>: <span class="name">Rectangle</span> {
+        <span class="name">width</span>: <span class="number">100</span>; <span class="name">height</span>: <span class="number">30</span>
+        <span class="name">color</span>: <span class="name">ListView</span>.<span class="name">isCurrentItem</span> ? <span class="string">"red"</span> : <span class="string">"yellow"</span>
+    }
+}</pre>
+<p>In this case, the name of the <i>attaching type</i> is <code>ListView</code> and the property in question is <code>isCurrentItem</code>, hence the attached property is referred to as <code>ListView.isCurrentItem</code>.</p>
+<p>An attached signal handler is referred to in the same way. For example, the <code>Component.isCompleted</code>
+ attached signal handler is commonly used to execute some JavaScript 
+code when a component's creation process has been completed. In the 
+example below, once the <a href="http://doc.qt.io/qt-5/qml-qtqml-models-listmodel.html">ListModel</a> has been fully created, its <code>Component.onCompleted</code> signal handler will automatically be invoked to populate the model:</p>
+<pre class="qml">import QtQuick 2.0
+
+<span class="type"><a href="http://doc.qt.io/qt-5/qml-qtquick-listview.html">ListView</a></span> {
+    <span class="name">width</span>: <span class="number">240</span>; <span class="name">height</span>: <span class="number">320</span>
+    <span class="name">model</span>: <span class="name">ListModel</span> {
+        <span class="name">id</span>: <span class="name">listModel</span>
+        <span class="name">Component</span>.onCompleted: {
+            <span class="keyword">for</span> (<span class="keyword">var</span> <span class="name">i</span> = <span class="number">0</span>; <span class="name">i</span> <span class="operator">&lt;</span> <span class="number">10</span>; i++)
+                <span class="name">listModel</span>.<span class="name">append</span>({"Name": <span class="string">"Item "</span> <span class="operator">+</span> <span class="name">i</span>})
+        }
+    }
+    <span class="name">delegate</span>: <span class="name">Text</span> { <span class="name">text</span>: <span class="name">index</span> }
+}</pre>
+<p>Since the name of the <i>attaching type</i> is <code>Component</code> and that type has a <code>completed</code> signal, the attached signal handler is referred to as <code>Component.isCompleted</code>.</p>
+<a name="a-note-about-accessing-attached-properties-and-signal-handlers"></a>
+<h4>A Note About Accessing Attached Properties and Signal Handlers</h4>
+<p>A common error is to assume that attached properties and signal 
+handlers are directly accessible from the children of the object to 
+which these attributes have been attached. This is not the case. The 
+instance of the <i>attaching type</i> is only attached to specific objects, not to the object and all of its children.</p>
+<p>For example, below is a modified version of the earlier example involving attached properties. This time, the delegate is an <a href="http://doc.qt.io/qt-5/qml-qtquick-item.html">Item</a> and the colored <a href="http://doc.qt.io/qt-5/qml-qtquick-rectangle.html">Rectangle</a> is a child of that item:</p>
+<pre class="qml">import QtQuick 2.0
+
+<span class="type"><a href="http://doc.qt.io/qt-5/qml-qtquick-listview.html">ListView</a></span> {
+    <span class="name">width</span>: <span class="number">240</span>; <span class="name">height</span>: <span class="number">320</span>
+    <span class="name">model</span>: <span class="number">3</span>
+    <span class="name">delegate</span>: <span class="name">Item</span> {
+        <span class="name">width</span>: <span class="number">100</span>; <span class="name">height</span>: <span class="number">30</span>
+
+        <span class="type"><a href="http://doc.qt.io/qt-5/qml-qtquick-rectangle.html">Rectangle</a></span> {
+            <span class="name">width</span>: <span class="number">100</span>; <span class="name">height</span>: <span class="number">30</span>
+            <span class="name">color</span>: <span class="name">ListView</span>.<span class="name">isCurrentItem</span> ? <span class="string">"red"</span> : <span class="string">"yellow"</span>    <span class="comment">// WRONG! This won't work.</span>
+        }
+    }
+}</pre>
+<p>This does not work as expected because <code>ListView.isCurrentItem</code> is attached <i>only</i> to the root delegate object, and not its children. Since the <a href="http://doc.qt.io/qt-5/qml-qtquick-rectangle.html">Rectangle</a> is a child of the delegate, rather than being the delegate itself, it cannot access the <code>isCurrentItem</code> attached property as <code>ListView.isCurrentItem</code>. So instead, the rectangle should access <code>isCurrentItem</code> through the root delegate:</p>
+<pre class="qml"><span class="type"><a href="http://doc.qt.io/qt-5/qml-qtquick-listview.html">ListView</a></span> {
+    <span class="comment">//....</span>
+    <span class="name">delegate</span>: <span class="name">Item</span> {
+        <span class="name">id</span>: <span class="name">delegateItem</span>
+        <span class="name">width</span>: <span class="number">100</span>; <span class="name">height</span>: <span class="number">30</span>
+
+        <span class="type"><a href="http://doc.qt.io/qt-5/qml-qtquick-rectangle.html">Rectangle</a></span> {
+            <span class="name">width</span>: <span class="number">100</span>; <span class="name">height</span>: <span class="number">30</span>
+            <span class="name">color</span>: <span class="name">delegateItem</span>.<span class="name">ListView</span>.<span class="name">isCurrentItem</span> ? <span class="string">"red"</span> : <span class="string">"yellow"</span>   <span class="comment">// correct</span>
+        }
+    }
+}</pre>
+<p>Now <code>delegateItem.ListView.isCurrentItem</code> correctly refers to the <code>isCurrentItem</code> attached property of the delegate.</p>
+</div>
+<!-- @@@qtqml-syntax-objectattributes.html -->
+   </div>
+   
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+
+<table class="gstl_50 gssb_c" style="width: 469px; display: none; top: -1px; position: absolute; left: 0px;" cellpadding="0" cellspacing="0"><tbody><tr><td class="gssb_f"></td><td style="width: 100%;" class="gssb_e"></td></tr></tbody></table><div style="left: 0px; top: 0px; position: absolute; width: 29px; height: 27px; border: medium none; margin: 0px; padding: 0px; z-index: 2147483647; display: none;" class="sbi_search" id="sbi_camera_button"></div></body></html>
