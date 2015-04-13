@@ -1,0 +1,411 @@
+<!--?xml version="1.0" encoding="UTF-8"?-->
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<!-- expressions.qdoc -->
+  <title>JavaScript Expressions in QML Documents | Qt QML 5.4</title>
+  <link rel="stylesheet" type="text/css" href="qtqml-javascript-expressions_files/online.css">
+  <link rel="shortcut icon" href="http://d3hp9ud7yvwzy0.cloudfront.net/wp-content/themes/oneqt/images/favicon.ico.gzip">
+  <script src="qtqml-javascript-expressions_files/widgets.txt" id="twitter-wjs"></script><script src="qtqml-javascript-expressions_files/sdk.txt" id="facebook-jssdk"></script><script src="qtqml-javascript-expressions_files/async-ads.js" async=""></script><script src="qtqml-javascript-expressions_files/cse.js" async="" type="text/javascript"></script><script src="qtqml-javascript-expressions_files/analytics.js" async=""></script><script type="text/javascript"> wpThemeFolder = 'http://qt.io/wp-content/themes/oneqt'; </script>
+  <script type="text/javascript" src="qtqml-javascript-expressions_files/combo.js"></script>
+  <script type="text/javascript" src="qtqml-javascript-expressions_files/main.js"></script>
+  <script type="text/javascript" src="qtqml-javascript-expressions_files/extras.js"></script>
+  <script type="text/javascript">
+  $(function(){
+     $("#sidebar-content").load("style/qt5-sidebar.html");
+  });
+  </script>
+  <script type="text/javascript">
+    (function (i, s, o, g, r, a, m) {
+      i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+        (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date(); a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', 'UA-54043535-2', 'qt.io');
+    ga('set', 'forceSSL', true);
+    ga('send', 'pageview');
+  </script>
+<script type="text/javascript" src="qtqml-javascript-expressions_files/jsapi"></script><script src="qtqml-javascript-expressions_files/a" type="text/javascript"></script><script src="qtqml-javascript-expressions_files/a.htm" type="text/javascript"></script><link rel="stylesheet" href="qtqml-javascript-expressions_files/defaulten.css" type="text/css"><link rel="stylesheet" href="qtqml-javascript-expressions_files/default.css" type="text/css"><script src="qtqml-javascript-expressions_files/defaulten_002.js" type="text/javascript"></script><style type="text/css">
+.gsc-control-cse {
+font-family: Arial, sans-serif;
+border-color: #FFFFFF;
+background-color: #FFFFFF;
+}
+.gsc-control-cse .gsc-table-result {
+font-family: Arial, sans-serif;
+}
+input.gsc-input {
+border-color: #D9D9D9;
+}
+input.gsc-search-button {
+border-color: #5CAA15;
+background-color: #5CAA15;
+}
+.gsc-tabHeader.gsc-tabhInactive {
+border-color: #E9E9E9;
+background-color: #E9E9E9;
+}
+.gsc-tabHeader.gsc-tabhActive {
+border-top-color: #5CAA15;
+border-left-color: #E9E9E9;
+border-right-color: #E9E9E9;
+background-color: #FFFFFF;
+}
+.gsc-tabsArea {
+border-color: #E9E9E9;
+}
+.gsc-webResult.gsc-result,
+.gsc-results .gsc-imageResult {
+border-color: #FFFFFF;
+background-color: #FFFFFF;
+}
+.gsc-webResult.gsc-result:hover,
+.gsc-imageResult:hover {
+border-color: #FFFFFF;
+background-color: #FFFFFF;
+}
+.gsc-webResult.gsc-result.gsc-promotion:hover {
+border-color: #FFFFFF;
+background-color: #FFFFFF;
+}
+.gs-webResult.gs-result a.gs-title:link,
+.gs-webResult.gs-result a.gs-title:link b,
+.gs-imageResult a.gs-title:link,
+.gs-imageResult a.gs-title:link b {
+color: #5CAA15;
+}
+.gs-webResult.gs-result a.gs-title:visited,
+.gs-webResult.gs-result a.gs-title:visited b,
+.gs-imageResult a.gs-title:visited,
+.gs-imageResult a.gs-title:visited b {
+color: #46A2DA;
+}
+.gs-webResult.gs-result a.gs-title:hover,
+.gs-webResult.gs-result a.gs-title:hover b,
+.gs-imageResult a.gs-title:hover,
+.gs-imageResult a.gs-title:hover b {
+color: #46A2DA;
+}
+.gs-webResult.gs-result a.gs-title:active,
+.gs-webResult.gs-result a.gs-title:active b,
+.gs-imageResult a.gs-title:active,
+.gs-imageResult a.gs-title:active b {
+color: #5CAA15;
+}
+.gsc-cursor-page {
+color: #5CAA15;
+}
+a.gsc-trailing-more-results:link {
+color: #5CAA15;
+}
+.gs-webResult .gs-snippet,
+.gs-imageResult .gs-snippet,
+.gs-fileFormatType {
+color: #404244;
+}
+.gs-webResult div.gs-visibleUrl,
+.gs-imageResult div.gs-visibleUrl {
+color: #5CAA15;
+}
+.gs-webResult div.gs-visibleUrl-short {
+color: #5CAA15;
+}
+.gs-webResult div.gs-visibleUrl-short {
+display: none;
+}
+.gs-webResult div.gs-visibleUrl-long {
+display: block;
+}
+.gs-promotion div.gs-visibleUrl-short {
+display: none;
+}
+.gs-promotion div.gs-visibleUrl-long {
+display: block;
+}
+.gsc-cursor-box {
+border-color: #FFFFFF;
+}
+.gsc-results .gsc-cursor-box .gsc-cursor-page {
+border-color: #E9E9E9;
+background-color: #FFFFFF;
+color: #5CAA15;
+}
+.gsc-results .gsc-cursor-box .gsc-cursor-current-page {
+border-color: #5CAA15;
+background-color: #FFFFFF;
+color: #46A2DA;
+}
+.gsc-webResult.gsc-result.gsc-promotion {
+border-color: #404244;
+background-color: #FFFFFF;
+}
+.gsc-completion-title {
+color: #5CAA15;
+}
+.gsc-completion-snippet {
+color: #404244;
+}
+.gs-promotion a.gs-title:link,
+.gs-promotion a.gs-title:link *,
+.gs-promotion .gs-snippet a:link {
+color: #0000CC;
+}
+.gs-promotion a.gs-title:visited,
+.gs-promotion a.gs-title:visited *,
+.gs-promotion .gs-snippet a:visited {
+color: #0000CC;
+}
+.gs-promotion a.gs-title:hover,
+.gs-promotion a.gs-title:hover *,
+.gs-promotion .gs-snippet a:hover {
+color: #0000CC;
+}
+.gs-promotion a.gs-title:active,
+.gs-promotion a.gs-title:active *,
+.gs-promotion .gs-snippet a:active {
+color: #0000CC;
+}
+.gs-promotion .gs-snippet,
+.gs-promotion .gs-title .gs-promotion-title-right,
+.gs-promotion .gs-title .gs-promotion-title-right * {
+color: #000000;
+}
+.gs-promotion .gs-visibleUrl,
+.gs-promotion .gs-visibleUrl-short {
+color: #008000;
+}
+</style><style type="text/css">.gscb_a{display:inline-block;font:27px/13px arial,sans-serif}.gsst_a .gscb_a{color:#a1b9ed;cursor:pointer}.gsst_a:hover .gscb_a,.gsst_a:focus .gscb_a{color:#36c}.gsst_a{display:inline-block}.gsst_a{cursor:pointer;padding:0 4px}.gsst_a:hover{text-decoration:none!important}.gsst_b{font-size:16px;padding:0 2px;position:relative;user-select:none;-moz-user-select:none;white-space:nowrap}.gsst_e{opacity:0.55;}.gsst_a:hover .gsst_e,.gsst_a:focus .gsst_e{opacity:0.72;}.gsst_a:active .gsst_e{opacity:1;}.gsst_f{background:white;text-align:left}.gsst_g{background-color:white;border:1px solid #ccc;border-top-color:#d9d9d9;box-shadow:0 2px 4px rgba(0,0,0,0.2);-moz-box-shadow:0 2px 4px rgba(0,0,0,0.2);margin:-1px -3px;padding:0 6px}.gsst_h{background-color:white;height:1px;margin-bottom:-1px;position:relative;top:-1px}.gsib_a{width:100%;padding:4px 6px 0}.gsib_a,.gsib_b{vertical-align:top}.gssb_c{border:0;position:absolute;z-index:989}.gssb_e{border:1px solid #ccc;border-top-color:#d9d9d9;box-shadow:0 2px 4px rgba(0,0,0,0.2);-moz-box-shadow:0 2px 4px rgba(0,0,0,0.2);cursor:default}.gssb_f{visibility:hidden;white-space:nowrap}.gssb_k{border:0;display:block;position:absolute;top:0;z-index:988}.gsdd_a{border:none!important}.gsq_a{padding:0}.gscsep_a{display:none}.gssb_a{padding:0 7px}.gssb_a,.gssb_a td{white-space:nowrap;overflow:hidden;line-height:22px}#gssb_b{font-size:11px;color:#36c;text-decoration:none}#gssb_b:hover{font-size:11px;color:#36c;text-decoration:underline}.gssb_g{text-align:center;padding:8px 0 7px;position:relative}.gssb_h{font-size:15px;height:28px;margin:0.2em}.gssb_i{background:#eee}.gss_ifl{visibility:hidden;padding-left:5px}.gssb_i .gss_ifl{visibility:visible}a.gssb_j{font-size:13px;color:#36c;text-decoration:none;line-height:100%}a.gssb_j:hover{text-decoration:underline}.gssb_l{height:1px;background-color:#e5e5e5}.gssb_m{color:#000;background:#fff}.gsfe_a{border:1px solid #b9b9b9;border-top-color:#a0a0a0;box-shadow:inset 0px 1px 2px rgba(0,0,0,0.1);-moz-box-shadow:inset 0px 1px 2px rgba(0,0,0,0.1);-webkit-box-shadow:inset 0px 1px 2px rgba(0,0,0,0.1);}.gsfe_b{border:1px solid #4d90fe;outline:none;box-shadow:inset 0px 1px 2px rgba(0,0,0,0.3);-moz-box-shadow:inset 0px 1px 2px rgba(0,0,0,0.3);-webkit-box-shadow:inset 0px 1px 2px rgba(0,0,0,0.3);}.gssb_a{padding:0 7px}.gssb_e{border:0}.gssb_l{margin:5px 0}.gssb_c .gsc-completion-container{position:static}.gssb_c{z-index:5000}.gsc-completion-container table{background:transparent;font-size:inherit;font-family:inherit}.gssb_c > tbody > tr,.gssb_c > tbody > tr > td,.gssb_d,.gssb_d > tbody > tr,.gssb_d > tbody > tr > td,.gssb_e,.gssb_e > tbody > tr,.gssb_e > tbody > tr > td{padding:0;margin:0;border:0}.gssb_a table,.gssb_a table tr,.gssb_a table tr td{padding:0;margin:0;border:0}</style><link href="qtqml-javascript-expressions_files/sbi.css" rel="stylesheet" type="text/css" id="sbi-style"><script src="qtqml-javascript-expressions_files/a_002" type="text/javascript"></script><link rel="stylesheet" href="qtqml-javascript-expressions_files/defaulten_002.css" type="text/css"><script src="qtqml-javascript-expressions_files/defaulten.js" type="text/javascript"></script></head>
+<body>
+
+<div class="main">
+<div class="main-rounded">
+
+<div class="content">
+    <div class="line">
+        <div class="content mainContent">
+
+<div class="context">
+<h1 class="title">JavaScript Expressions in QML Documents</h1>
+<span class="subtitle"></span>
+<!-- $$$qtqml-javascript-expressions.html-description -->
+<div class="descr"> <a name="details"></a>
+<p>The <a href="http://doc.qt.io/qt-5/qtqml-javascript-hostenvironment.html">JavaScript Host Environment</a>
+ provided by QML can run valid standard JavaScript constructs such as 
+conditional operators, arrays, variable setting, loops. In addition to 
+the standard JavaScript properties, the <a href="http://doc.qt.io/qt-5/qtqml-javascript-qmlglobalobject.html">QML Global Object</a> includes a number of helper methods that simplify building UIs and interacting with the QML environment.</p>
+<p>The JavaScript environment provided by QML is stricter than that in a
+ web browser. For example, in QML you cannot add to, or modify, members 
+of the JavaScript global object. In regular JavaScript, it is possible 
+to do this accidentally by using a variable without declaring it. In QML
+ this will throw an exception, so all local variables must be explicitly
+ declared. See <a href="http://doc.qt.io/qt-5/qtqml-javascript-hostenvironment.html#javascript-environment-restrictions">JavaScript Environment Restrictions</a> for a complete description of the restrictions on JavaScript code executed from QML.</p>
+<p>Various parts of <a href="http://doc.qt.io/qt-5/qtqml-documents-topic.html">QML documents</a> can contain JavaScript code:</p>
+<ol class="1">
+<li>The body of <a href="http://doc.qt.io/qt-5/qtqml-syntax-propertybinding.html">property bindings</a>. These JavaScript expressions describe relationships between QML object <a href="http://doc.qt.io/qt-5/qtqml-syntax-objectattributes.html#property-attributes">properties</a>. When any of a property's <i>dependencies</i> change, the property is automatically updated too, according to the specified relationship.</li>
+<li>The body of <a href="http://doc.qt.io/qt-5/qtqml-syntax-objectattributes.html#signal-attributes">Signal handlers</a>. These JavaScript statements are automatically evaluated whenever a QML object emits the associated signal.</li>
+<li>The definition of <a href="http://doc.qt.io/qt-5/qtqml-syntax-objectattributes.html#method-attributes">custom methods</a>. JavaScript functions that are defined within the body of a QML object become methods of that object.</li>
+<li>Standalone <a href="http://doc.qt.io/qt-5/qtqml-javascript-imports.html">JavaScript resource (.js) files</a>.
+ These files are actually separate from QML documents, but they can be 
+imported into QML documents. Functions and variables that are defined 
+within the imported files can be used in property bindings, signal 
+handlers, and custom methods.</li>
+</ol>
+<a name="javascript-in-property-bindings"></a>
+<h2 id="javascript-in-property-bindings">JavaScript in Property Bindings</h2>
+<p>In the following example, the <a href="http://doc.qt.io/qt-5/qml-qtquick-rectangle.html">Rectangle</a>'s <code>color</code> depends on the <a href="http://doc.qt.io/qt-5/qml-qtquick-mousearea.html">MouseArea</a>'s <code>pressed</code> property. This relationship is described using a conditional expression:</p>
+<pre class="qml">import QtQuick 2.0
+
+<span class="type"><a href="http://doc.qt.io/qt-5/qml-qtquick-rectangle.html">Rectangle</a></span> {
+    <span class="name">id</span>: <span class="name">colorbutton</span>
+    <span class="name">width</span>: <span class="number">200</span>; <span class="name">height</span>: <span class="number">80</span>;
+
+    <span class="name">color</span>: <span class="name">mousearea</span>.<span class="name">pressed</span> ? <span class="string">"steelblue"</span> : <span class="string">"lightsteelblue"</span>
+
+    <span class="type"><a href="http://doc.qt.io/qt-5/qml-qtquick-mousearea.html">MouseArea</a></span> {
+        <span class="name">id</span>: <span class="name">mousearea</span>
+        <span class="name">anchors</span>.fill: <span class="name">parent</span>
+    }
+}</pre>
+<p>In fact, any JavaScript expression (no matter how complex) may be 
+used in a property binding definition, as long as the result of the 
+expression is a value whose type can be assigned to the property. This 
+includes side effects. However, complex bindings and side effects are 
+discouraged because they can reduce the performance, readability, and 
+maintainability of the code.</p>
+<p>There are two ways to define a property binding: the first (and most common) is, as previously shown, in a <a href="http://doc.qt.io/qt-5/qtqml-syntax-objectattributes.html#value-assignment-on-initialization">property initialization</a>. The second (and much rarer) way is to assign the property a function returned from the <a href="http://doc.qt.io/qt-5/qml-qtqml-qt.html#binding-method">Qt.binding()</a> function, from within imperative JavaScript code, as shown below:</p>
+<pre class="qml">import QtQuick 2.0
+
+<span class="type"><a href="http://doc.qt.io/qt-5/qml-qtquick-rectangle.html">Rectangle</a></span> {
+    <span class="name">id</span>: <span class="name">colorbutton</span>
+    <span class="name">width</span>: <span class="number">200</span>; <span class="name">height</span>: <span class="number">80</span>;
+
+    <span class="name">color</span>: <span class="string">"red"</span>
+
+    <span class="type"><a href="http://doc.qt.io/qt-5/qml-qtquick-mousearea.html">MouseArea</a></span> {
+        <span class="name">id</span>: <span class="name">mousearea</span>
+        <span class="name">anchors</span>.fill: <span class="name">parent</span>
+    }
+
+    <span class="name">Component</span>.onCompleted: {
+        <span class="name">color</span> <span class="operator">=</span> <span class="name">Qt</span>.<span class="name">binding</span>(<span class="keyword">function</span>() { <span class="keyword">return</span> <span class="name">mousearea</span>.<span class="name">pressed</span> ? <span class="string">"steelblue"</span> : <span class="string">"lightsteelblue"</span> });
+    }
+}</pre>
+<p>See the <a href="http://doc.qt.io/qt-5/qtqml-syntax-propertybinding.html">property bindings</a> documentation for more information about how to define property bindings, and see the documentation about <a href="http://doc.qt.io/qt-5/qtqml-syntax-propertybinding.html#qml-javascript-assignment">Property Assignment versus Property Binding</a> for information about how bindings differ from value assignments.</p>
+<a name="javascript-in-signal-handlers"></a>
+<h2 id="javascript-in-signal-handlers">JavaScript in Signal Handlers</h2>
+<p>QML object types can emit signals in reaction to certain events 
+occurring. Those signals can be handled by signal handler functions, 
+which can be defined by clients to implement custom program logic.</p>
+<p>Suppose that a button represented by a Rectangle type has a <a href="http://doc.qt.io/qt-5/qml-qtquick-mousearea.html">MouseArea</a> and a Text label. The <a href="http://doc.qt.io/qt-5/qml-qtquick-mousearea.html">MouseArea</a> will emit its <a href="http://doc.qt.io/qt-5/qml-qtquick-mousearea.html#pressed-prop">pressed</a> signal when the user presses the defined interactive area, which will automatically trigger the <code>onPressed</code> handler, which can be defined by clients. The QML engine will execute the JavaScript expressions defined in the <code>onPressed</code> and <code>onReleased</code>
+ handlers, as required. Typically, a signal handler is bound to 
+JavaScript expressions to initiate other events or to simply assign 
+property values.</p>
+<pre class="qml">import QtQuick 2.0
+
+<span class="type"><a href="http://doc.qt.io/qt-5/qml-qtquick-rectangle.html">Rectangle</a></span> {
+    <span class="name">id</span>: <span class="name">button</span>
+    <span class="name">width</span>: <span class="number">200</span>; <span class="name">height</span>: <span class="number">80</span>; <span class="name">color</span>: <span class="string">"lightsteelblue"</span>
+
+    <span class="type"><a href="http://doc.qt.io/qt-5/qml-qtquick-mousearea.html">MouseArea</a></span> {
+        <span class="name">id</span>: <span class="name">mousearea</span>
+        <span class="name">anchors</span>.fill: <span class="name">parent</span>
+
+        <span class="name">onPressed</span>: {
+            <span class="comment">// arbitrary JavaScript expression</span>
+            <span class="name">label</span>.<span class="name">text</span> <span class="operator">=</span> <span class="string">"I am Pressed!"</span>
+        }
+        <span class="name">onReleased</span>: {
+            <span class="comment">// arbitrary JavaScript expression</span>
+            <span class="name">label</span>.<span class="name">text</span> <span class="operator">=</span> <span class="string">"Click Me!"</span>
+        }
+
+    }
+
+    <span class="type"><a href="http://doc.qt.io/qt-5/qml-qtquick-text.html">Text</a></span> {
+        <span class="name">id</span>: <span class="name">label</span>
+        <span class="name">anchors</span>.centerIn: <span class="name">parent</span>
+        <span class="name">text</span>: <span class="string">"Press Me!"</span>
+    }
+}</pre>
+<p>Please see the <a href="http://doc.qt.io/qt-5/qtqml-syntax-signals.html">Signal and Handler Event System</a> documentation for in-depth discussion of signals and signal handlers, and see the <a href="http://doc.qt.io/qt-5/qtqml-syntax-objectattributes.html">QML Object Attributes</a> documentation for in-depth discussion of how to define the implementation of signal handlers in QML with JavaScript.</p>
+<a name="javascript-in-standalone-functions"></a>
+<h2 id="javascript-in-standalone-functions">JavaScript in Standalone Functions</h2>
+<p>Program logic can also be defined in JavaScript functions. These 
+functions can be defined inline in QML documents (as custom methods) or 
+externally in imported JavaScript files.</p>
+<a name="javascript-in-custom-object-methods"></a>
+<h3>JavaScript in Custom Object Methods</h3>
+<p>Custom methods can be defined in QML documents and may be called from
+ signal handlers, property bindings, or functions in other QML objects. 
+Methods defined in this way are often referred to as <i>inline JavaScript functions</i>
+ because their implementation is included in the QML object type 
+definition (QML document), as opposed to an external JavaScript file.</p>
+<p>An example of an inline custom method is as follows:</p>
+<pre class="qml">import QtQuick 2.0
+
+<span class="type"><a href="http://doc.qt.io/qt-5/qml-qtquick-item.html">Item</a></span> {
+    <span class="keyword">function</span> <span class="name">factorial</span>(<span class="name">a</span>) {
+        <span class="name">a</span> <span class="operator">=</span> <span class="name">parseInt</span>(<span class="name">a</span>);
+        <span class="keyword">if</span> (<span class="name">a</span> <span class="operator">&lt;=</span> <span class="number">0</span>)
+            <span class="keyword">return</span> <span class="number">1</span>;
+        <span class="keyword">else</span>
+            <span class="keyword">return</span> <span class="name">a</span> <span class="operator">*</span> <span class="name">factorial</span>(<span class="name">a</span> <span class="operator">-</span> <span class="number">1</span>);
+    }
+
+    <span class="type"><a href="http://doc.qt.io/qt-5/qml-qtquick-mousearea.html">MouseArea</a></span> {
+        <span class="name">anchors</span>.fill: <span class="name">parent</span>
+        <span class="name">onClicked</span>: <span class="name">console</span>.<span class="name">log</span>(<span class="name">factorial</span>(<span class="number">10</span>))
+    }
+}</pre>
+<p>The factorial function will run whenever the <a href="http://doc.qt.io/qt-5/qml-qtquick-mousearea.html">MouseArea</a> detects a <code>clicked</code> signal.</p>
+<p>Importantly, custom methods defined inline in a QML document are 
+exposed to other objects, and therefore inline functions on the root 
+object in a QML component can be invoked by callers outside the 
+component. If this is not desired, the method can be added to a non-root
+ object or, preferably, written in an external JavaScript file.</p>
+<p>See the <a href="http://doc.qt.io/qt-5/qtqml-syntax-objectattributes.html">QML Object Attributes</a> documentation for in-depth discussion of how to define custom methods in QML with JavaScript code implementations.</p>
+<a name="functions-in-imported-javascript-files"></a>
+<h3>Functions in Imported JavaScript Files</h3>
+<p>Non-trivial program logic is best separated into external JavaScript files. These files can be imported into QML files using an <code>import</code> statement, in the same way that <a href="http://doc.qt.io/qt-5/qtqml-modules-topic.html">modules</a> are imported.</p>
+<p>For example, the <code>factorial()</code> method in the above example could be moved into an external file named <code>factorial.js</code>, and accessed like this:</p>
+<pre class="qml">import "factorial.js" as MathFunctions
+
+<span class="type"><a href="http://doc.qt.io/qt-5/qml-qtquick-item.html">Item</a></span> {
+    <span class="type"><a href="http://doc.qt.io/qt-5/qml-qtquick-mousearea.html">MouseArea</a></span> {
+        <span class="name">anchors</span>.fill: <span class="name">parent</span>
+        <span class="name">onClicked</span>: <span class="name">console</span>.<span class="name">log</span>(<span class="name">MathFunctions</span>.<span class="name">factorial</span>(<span class="number">10</span>))
+    }
+}</pre>
+<p>For more information about loading external JavaScript files into QML, read the section about <a href="http://doc.qt.io/qt-5/qtqml-javascript-imports.html">Importing JavaScript Resources in QML</a>.</p>
+<a name="connecting-signals-to-javascript-functions"></a>
+<h3>Connecting Signals to JavaScript Functions</h3>
+<p>QML object types which emit signals also provide default signal 
+handlers for their signals, as described in a previous section. 
+Sometimes, however, a client will want to cause a signal emitted from 
+one object to trigger a function defined in another object; and in that 
+case, a signal connection is often preferable.</p>
+<p>A signal emitted by a QML object may be connected to a JavaScript function by calling the signal's <code>connect()</code> method and passing the JavaScript function as an argument. For example, the following code connects the <a href="http://doc.qt.io/qt-5/qml-qtquick-mousearea.html">MouseArea</a> <code>clicked</code> signal to the <code>jsFunction()</code> in <code>script.js</code>:</p>
+<div class="table"><table class="generic">
+ <tbody><tr class="odd" valign="top"><td><pre class="qml">import QtQuick 2.0
+import "script.js" as MyScript
+
+<span class="type"><a href="http://doc.qt.io/qt-5/qml-qtquick-item.html">Item</a></span> {
+    <span class="name">id</span>: <span class="name">item</span>
+    <span class="name">width</span>: <span class="number">200</span>; <span class="name">height</span>: <span class="number">200</span>
+
+    <span class="type"><a href="http://doc.qt.io/qt-5/qml-qtquick-mousearea.html">MouseArea</a></span> {
+        <span class="name">id</span>: <span class="name">mouseArea</span>
+        <span class="name">anchors</span>.fill: <span class="name">parent</span>
+    }
+
+    <span class="name">Component</span>.onCompleted: {
+        <span class="name">mouseArea</span>.<span class="name">clicked</span>.<span class="name">connect</span>(<span class="name">MyScript</span>.<span class="name">jsFunction</span>)
+    }
+}</pre>
+</td><td><pre class="js"><span class="comment">// script.js</span>
+
+<span class="keyword">function</span> <span class="name">jsFunction</span>() {
+    <span class="name">console</span>.<span class="name">log</span>(<span class="string">"Called JavaScript function!"</span>)
+}</pre>
+</td></tr>
+</tbody></table></div>
+<p>The <code>jsFunction()</code> will now be called whenever <a href="http://doc.qt.io/qt-5/qml-qtquick-mousearea.html">MouseArea</a>'s <code>clicked</code> signal is emitted.</p>
+<p>See <a href="http://doc.qt.io/qt-5/qtqml-syntax-signals.html">Connecting Signals to Methods and Signals</a> for more information.</p>
+<a name="javascript-in-application-startup-code"></a>
+<h2 id="javascript-in-application-startup-code">JavaScript in Application Startup Code</h2>
+<p>It is occasionally necessary to run some imperative code at 
+application (or component instance) startup. While it is tempting to 
+just include the startup script as <i>global code</i> in an external 
+script file, this can have severe limitations as the QML environment may
+ not have been fully established. For example, some objects might not 
+have been created or some <a href="http://doc.qt.io/qt-5/qtqml-syntax-propertybinding.html">property bindings</a> may not have been established. See <a href="http://doc.qt.io/qt-5/qtqml-javascript-hostenvironment.html#javascript-environment-restrictions">JavaScript Environment Restrictions</a> for the exact limitations of global script code.</p>
+<p>A QML object will emit the <code>Component.completed</code> <a href="http://doc.qt.io/qt-5/qtqml-syntax-signals.html#attached-signal-handlers">attached signal</a> when its instantiation is complete. JavaScript code in the corresponding <code>Component.onCompleted</code> handler runs after the object is instantiated. Thus, the best place to write application startup code is in the <code>Component.onCompleted</code> handler of the top-level object, because this object emits <code>Component.completed</code> when the QML environment is fully established.</p>
+<p>For example:</p>
+<pre class="qml">import QtQuick 2.0
+
+<span class="type"><a href="http://doc.qt.io/qt-5/qml-qtquick-rectangle.html">Rectangle</a></span> {
+    <span class="keyword">function</span> <span class="name">startupFunction</span>() {
+        <span class="comment">// ... startup code</span>
+    }
+
+    <span class="name">Component</span>.onCompleted: <span class="name">startupFunction</span>();
+}</pre>
+<p>Any object in a QML file - including nested objects and nested QML 
+component instances - can use this attached property. If there is more 
+than one <code>onCompleted()</code> handler to execute at startup, they are run sequentially in an undefined order.</p>
+<p>Likewise, every <code>Component</code> will emit a <a href="http://doc.qt.io/qt-5/qml-qtqml-component.html#destruction-signal">destruction()</a> signal just before being destroyed.</p>
+</div>
+<!-- @@@qtqml-javascript-expressions.html -->
+   </div>
+   
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+
+</body></html>

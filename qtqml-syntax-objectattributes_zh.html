@@ -387,13 +387,9 @@ Text {
 	 属性(property)别名连接新声明的属性(也称作别名属性(property))直接引用到一个已经存在的属性(property)(也叫做被别名属性(property)).</p>
 <p>属性(property)别名声明看起来像一个正常的属性定义, 除了它要求<code>alias</code>关键词代替属性(property)类型,并且要求右手边的属性(property)声明必须是一个合法的别名引用:</p>
 <pre class="cpp"><span class="operator">[</span><span class="keyword">default</span><span class="operator">]</span> property alias <span class="operator">&lt;</span>name<span class="operator">&gt;</span>: <span class="operator">&lt;</span>alias reference<span class="operator">&gt;</span></pre>
-<p>Unlike an ordinary property, an alias can only refer to a object, or the property of a object, that is within the scope of the <a href="http://doc.qt.io/qt-5/qtqml-typesystem-objecttypes.html">type</a>
- within which the alias is declared. It cannot contain arbitrary 
-JavaScript expressions and it cannot refer to objects declared outside 
-of the scope of its type. Also note the <i>alias reference</i> is not 
-optional, unlike the optional default value for an ordinary property; 
-the alias reference must be provided when the alias is first declared.</p>
-<p>For example, below is a <code>Button</code> type with a <code>buttonText</code> aliased property which is connected to the <code>text</code> object of the <a href="http://doc.qt.io/qt-5/qtquick-releasenotes.html#text">Text</a> child:</p>
+<p>不像普通属性(property),别名只能引用对象或者对象的属性(property),这个对象在别名声明的<a href="http://doc.qt.io/qt-5/qtqml-typesystem-objecttypes.html">类型(type)</a>
+ 范围内.它不能包含任意的JavaScript表达式并且也不能引用在它自己的类型声明范围之外的对象. 还要说明的是<i>别名引用</i>是不可选的,不像一般属性(property)可选的默认值,别名引用在第一次声明的时候必须提供.</p>
+<p>比如,下面是一个<code>Button</code>类型有一个<code>buttonText</code>别名属性(property),连接到<a href="http://doc.qt.io/qt-5/qtquick-releasenotes.html#text">Text</a>对象的<code>text</code></p>
 <pre class="qml"><span class="comment">// Button.qml</span>
 import QtQuick 2.0
 
@@ -404,33 +400,25 @@ import QtQuick 2.0
 
     <span class="type"><a href="http://doc.qt.io/qt-5/qml-qtquick-text.html">Text</a></span> { <span class="name">id</span>: <span class="name">textItem</span> }
 }</pre>
-<p>The following code would create a <code>Button</code> with a defined text string for the child <a href="http://doc.qt.io/qt-5/qtquick-releasenotes.html#text">Text</a> object:</p>
+<p>下列代码将会使用定义<a href="http://doc.qt.io/qt-5/qtquick-releasenotes.html#text">Text</a>对象的text字符串创建一个<code>Button</code>对象:</p>
 <pre class="qml"><span class="type"><a href="http://doc.qt.io/qt-5/qml-qtquick-controls-button.html">Button</a></span> { <span class="name">buttonText</span>: <span class="string">"Click Me"</span> }</pre>
-<p>Here, modifying <code>buttonText</code> directly modifies the textItem.text value; it does not change some other value that then updates textItem.text. If <code>buttonText</code>
- was not an alias, changing its value would not actually change the 
-displayed text at all, as property bindings are not bi-directional: the <code>buttonText</code> value would have changed if textItem.text was changed, but not the other way around.</p>
+<p>这里修改<code>buttonText</code> 就直接修改了textItem.text值;除了更新textItem.text不修改其他值.如果<code>buttonText</code>
+ 不是一个引用,修改它的值实际根本不修改显示文本,属性(property)绑定不是双向的: <code>buttonText</code>值当textItem.text改变的时候也会随着改变,但其他方式都不会.</p>
 <a name="considerations-for-property-aliases"></a>
-<h5>Considerations for Property Aliases</h5>
-<p>Aliases are only activated once a component has been fully 
-initialized. An error is generated when an uninitialized alias is 
-referenced. Likewise, aliasing an aliasing property will also result in 
-an error.</p>
+<h5>属性(Property)别名注意事项</h5>
+<p>别名只在组件被完全初始化后激活. 当没有初始化完成的别名被引用的时候产生一个错误. 同样别名一个别名属性(property)也会产生错误.</p>
 <pre class="qml">property <span class="type">alias</span> <span class="name">widgetLabel</span>: <span class="name">label</span>
 
-<span class="comment">//will generate an error</span>
+<span class="comment">//将产生一个错误</span>
 <span class="comment">//widgetLabel.text: "Initial text"</span>
 
-<span class="comment">//will generate an error</span>
+<span class="comment">//将产生一个错误</span>
 <span class="comment">//property alias widgetLabelText: widgetLabel.text</span>
 
 <span class="name">Component</span>.onCompleted: <span class="name">widgetLabel</span>.<span class="name">text</span> <span class="operator">=</span> <span class="string">"Alias completed Initialization"</span></pre>
-<p>When importing a <a href="http://doc.qt.io/qt-5/qtqml-typesystem-objecttypes.html">QML object type</a>
- with a property alias in the root object, however, the property appear 
-as a regular Qt property and consequently can be used in alias 
-references.</p>
-<p>It is possible for an aliasing property to have the same name as an 
-existing property, effectively overwriting the existing property. For 
-example, the following QML type has a <code>color</code> alias property, named the same as the built-in <a href="http://doc.qt.io/qt-5/qml-qtquick-rectangle.html#color-prop">Rectangle::color</a> property:</p>
+<p>当import一个带有属性(proerpty)别名的<a href="http://doc.qt.io/qt-5/qtqml-typesystem-objecttypes.html">QML对象类型</a>作为根对象,属性(property)显示为一般的Qt 属性(property)
+	所以可以用作别名引用.</p>
+<p>别名属性和已经存在的属性(property)可以有同样的名字,这种效果就是别名覆盖了以存在的属性(property). 举例, 下面的QML类型有一个<code>color</code> 别名属性(property),同内建的<a href="http://doc.qt.io/qt-5/qml-qtquick-rectangle.html#color-prop">Rectangle::color</a>属性(property)一样:</p>
 <pre class="qml"><span class="type"><a href="http://doc.qt.io/qt-5/qml-qtquick-rectangle.html">Rectangle</a></span> {
     <span class="name">id</span>: <span class="name">coloredrectangle</span>
     property <span class="type">alias</span> <span class="name">color</span>: <span class="name">bluerectangle</span>.<span class="name">color</span>
@@ -449,19 +437,16 @@ example, the following QML type has a <code>color</code> alias property, named t
         <span class="name">console</span>.<span class="name">log</span> (<span class="name">coloredrectangle</span>.<span class="name">color</span>)    <span class="comment">//prints #884646</span>
     }
 
-    <span class="comment">//internal function that has access to internal properties</span>
+    <span class="comment">//内部函数访问内部属性(properties)</span>
     <span class="keyword">function</span> <span class="name">setInternalColor</span>() {
         <span class="name">color</span> <span class="operator">=</span> <span class="string">"#111111"</span>
     }
 }</pre>
-<p>Any object that use this type and refer to its <code>color</code> property will be referring to the alias rather than the ordinary <a href="http://doc.qt.io/qt-5/qml-qtquick-rectangle.html#color-prop">Rectangle::color</a> property. Internally, however, the red can correctly set its <code>color</code> property and refer to the actual defined property rather than the alias.</p>
+<p>任何使用该类型的对象可以应用它的<code>color</code> 属性(property)将会引用到别名而不是正常<a href="http://doc.qt.io/qt-5/qml-qtquick-rectangle.html#color-prop">Rectangle::color</a>属性(property). 但是在内部可以正确设置它的<code>color</code> 属性(property)实际应用是正常的属性(property)而不是别名.</p>
 <a name="default-properties"></a>
-<h4>Default Properties</h4>
-<p>An object definition can have a single <i>default</i> property. A 
-default property is the property to which a value is assigned if an 
-object is declared within another object's definition without declaring 
-it as a value for a particular property.</p>
-<p>Declaring a property with the optional <code>default</code> keyword marks it as the default property. For example, say there is a file MyLabel.qml with a default property <code>someText</code>:</p>
+<h4>默认属性(properties)</h4>
+<p>一个对象定义可以有独一的 <i>default</i> 属性(property). 默认属性是对象在另外一个对象中被声明但没有定义特定的属性(property)值</p>
+<p>声明一个具有可选的<code>default</code>关键字的属性(properoty)就可以是这个属性成为默认属性(property). 比如,文件MyLabel.qml 有一个默认属性(property) <code>someText</code>:</p>
 <pre class="qml"><span class="comment">// MyLabel.qml</span>
 import QtQuick 2.0
 
@@ -470,19 +455,19 @@ import QtQuick 2.0
 
     <span class="name">text</span>: <span class="string">"Hello, "</span> <span class="operator">+</span> <span class="name">someText</span>.<span class="name">text</span>
 }</pre>
-<p>The <code>someText</code> value could be assigned to in a <code>MyLabel</code> object definition, like this:</p>
+<p>The <code>someText</code>的值可以在定义<code>MyLabel</code>值的时候赋予 , :</p>
 <pre class="qml"><span class="type">MyLabel</span> {
     <span class="type"><a href="http://doc.qt.io/qt-5/qml-qtquick-text.html">Text</a></span> { <span class="name">text</span>: <span class="string">"world!"</span> }
 }</pre>
-<p>This has exactly the same effect as the following:</p>
+<p>效果和一下语句相同:</p>
 <pre class="qml"><span class="type">MyLabel</span> {
     <span class="name">someText</span>: <span class="name">Text</span> { <span class="name">text</span>: <span class="string">"world!"</span> }
 }</pre>
-<p>However, since the <code>someText</code> property has been marked as the default property, it is not necessary to explicitly assign the <a href="http://doc.qt.io/qt-5/qtquick-releasenotes.html#text">Text</a> object to this property.</p>
+<p>因为<code>someText</code> 属性已经被定义为default所以显示的将一个<a href="http://doc.qt.io/qt-5/qtquick-releasenotes.html#text">Text</a> 对象赋予这个属性(property)不是必要的</p>
 <p>You will notice that child objects can be added to any <a href="http://doc.qt.io/qt-5/qml-qtquick-item.html">Item</a>-based type without explicitly adding them to the <a href="http://doc.qt.io/qt-5/qml-qtquick-item.html#children-prop">children</a> property. This is because the default property of <a href="http://doc.qt.io/qt-5/qml-qtquick-item.html">Item</a> is its <code>data</code> property, and any items added to this list for an <a href="http://doc.qt.io/qt-5/qml-qtquick-item.html">Item</a> are automatically added to its list of <a href="http://doc.qt.io/qt-5/qml-qtquick-item.html#children-prop">children</a>.</p>
 <p>Default properties can be useful for reassigning the children of an item. See the <a href="http://doc.qt.io/qt-5/qtquick-customitems-tabwidget-example.html">TabWidget Example</a>, which uses a default property to automatically reassign children of the <a href="http://doc.qt.io/qt-5/qml-uicomponents-tabwidget.html">TabWidget</a> as children of an inner <a href="http://doc.qt.io/qt-5/qml-qtquick-listview.html">ListView</a>.</p>
 <a name="read-only-properties"></a>
-<h4>Read-Only Properties</h4>
+<h4>只读属性(Properties)</h4>
 <p>An object declaration may define a read-only property using the <code>readonly</code> keyword, with the following syntax:</p>
 <pre class="cpp">    readonly property <span class="operator">&lt;</span>propertyType<span class="operator">&gt;</span> <span class="operator">&lt;</span>propertyName<span class="operator">&gt;</span> : <span class="operator">&lt;</span>initialValue<span class="operator">&gt;</span></pre>
 <p>Read-only properties must be assigned a value on initialization. 
@@ -495,7 +480,7 @@ After a read-only property is initialized, it no longer possible to give
     <span class="name">Component</span>.onCompleted: <span class="name">someNumber</span> <span class="operator">=</span> <span class="number">20</span>  <span class="comment">// doesn't work, causes an error</span>
 }</pre>
 <p><b>Note: </b>A read-only property cannot also be a <a href="http://doc.qt.io/qt-5/qtqml-syntax-objectattributes.html#default-properties">default</a> or <a href="http://doc.qt.io/qt-5/qtqml-syntax-objectattributes.html#property-aliases">alias</a> property.</p><a name="property-modifier-objects"></a>
-<h4>Property Modifier Objects</h4>
+<h4>属性修改器对象Property Modifier Objects</h4>
 <p>Properties can have <a href="http://doc.qt.io/qt-5/qtqml-cppintegration-definetypes.html#property-modifier-types">property value modifier objects</a>
  associated with them. The syntax for declaring an instance of a 
 property modifier type associated with a particular property is as 
@@ -512,7 +497,7 @@ non-numeric property will not be animated. The behavior of a property
 modifier type when associated with a particular property type is defined
  by its implementation.</p>
 <a name="signal-attributes"></a>
-<h3>Signal Attributes</h3>
+<h3>信号特性(Attributes)</h3>
 <p>A signal is a notification from an object that some event has 
 occurred: for example, a property has changed, an animation has started 
 or stopped, or when an image has been downloaded. The <a href="http://doc.qt.io/qt-5/qml-qtquick-mousearea.html">MouseArea</a> type, for example, has a <a href="http://doc.qt.io/qt-5/qml-qtquick-mousearea.html#clicked-signal">clicked</a> signal that is emitted when the user clicks within the mouse area.</p>
@@ -535,7 +520,7 @@ JavaScript code to be executed when the signal handler is invoked.</p>
     }
 }</pre>
 <a name="defining-signal-attributes"></a>
-<h4>Defining Signal Attributes</h4>
+<h4>定义信号特性(Attributes)</h4>
 <p>A signal may be defined for a type in C++ by registering a <a href="http://doc.qt.io/qt-5/qobject.html#Q_SIGNAL">Q_SIGNAL</a>
  of a class which is then registered with the QML type system. 
 Alternatively, a custom signal for an object type may be defined in an 
@@ -559,10 +544,10 @@ parameters are used, the parameter types must be declared, as for the <code>stri
  will be invoked when the signal is emitted, and handlers can use the 
 defined signal argument names to access the respective arguments.</p>
 <a name="property-change-signals"></a>
-<h4>Property Change Signals</h4>
+<h4>属性(Property)改变信号</h4>
 <p>QML types also provide built-in <i>property change signals</i> that are emitted whenever a property value changes, as previously described in the section on <a href="http://doc.qt.io/qt-5/qtqml-syntax-objectattributes.html#property-attributes">property attributes</a>. See the upcoming section on <a href="http://doc.qt.io/qt-5/qtqml-syntax-signals.html#property-change-signal-handlers">property change signal handlers</a> for more information about why these signals are useful, and how to use them.</p>
 <a name="signal-handler-attributes"></a>
-<h3>Signal Handler Attributes</h3>
+<h3>信号处理器特性(Attributes)</h3>
 <p>Signal handlers are a special sort of <a href="http://doc.qt.io/qt-5/qtqml-syntax-objectattributes.html#method-attributes">method attribute</a>,
  where the method implementation is invoked by the QML engine whenever 
 the associated signal is emitted. Adding a signal to an object 
@@ -593,7 +578,7 @@ Clients can provide an implementation, to implement program logic.</p>
 }</pre>
 <p>See the <a href="http://doc.qt.io/qt-5/qtqml-syntax-signals.html">Signal and Handler Event System</a> for more details on use of signals.</p>
 <a name="property-change-signal-handlers"></a>
-<h4>Property Change Signal Handlers</h4>
+<h4>属性(Property)改变信号处理器</h4>
 <p>Signal handlers for property change signal take the syntax form <i>on&lt;Property&gt;Changed</i> where <i>&lt;Property&gt;</i> is the name of the property, with the first letter capitalized. For example, although the <a href="http://doc.qt.io/qt-5/qml-qtquick-textinput.html">TextInput</a> type documentation does not document a <code>textChanged</code> signal, this signal is implicitly available through the fact that <a href="http://doc.qt.io/qt-5/qml-qtquick-textinput.html">TextInput</a> has a <a href="http://doc.qt.io/qt-5/qml-qtquick-textinput.html#text-prop">text</a> property and so it is possible to write an <code>onTextChanged</code> signal handler to be called whenever this property changes:</p>
 <pre class="qml">import QtQuick 2.0
 
@@ -603,7 +588,7 @@ Clients can provide an implementation, to implement program logic.</p>
     <span class="name">onTextChanged</span>: <span class="name">console</span>.<span class="name">log</span>(<span class="string">"Text has changed to:"</span>, <span class="name">text</span>)
 }</pre>
 <a name="method-attributes"></a>
-<h3>Method Attributes</h3>
+<h3>方法特性(Attributes)</h3>
 <p>A method of an object type is a function which may be called to 
 perform some processing or trigger further events. A method can be 
 connected to a signal so that it is automatically invoked whenever the 
@@ -656,7 +641,7 @@ caution, as the existing method may be hidden and become inaccessible.)</p>
     }
 }</pre>
 <a name="attached-properties-and-attached-signal-handlers"></a>
-<h3>Attached Properties and Attached Signal Handlers</h3>
+<h3>附加属性(Properties)和附加信号处理器</h3>
 <p><i>Attached properties</i> and <i>attached signal handlers</i> are 
 mechanisms that enable objects to be annotated with extra properties or 
 signal handlers that are otherwise unavailable to the object. In 
@@ -701,7 +686,7 @@ example below, once the <a href="http://doc.qt.io/qt-5/qml-qtqml-models-listmode
 }</pre>
 <p>Since the name of the <i>attaching type</i> is <code>Component</code> and that type has a <code>completed</code> signal, the attached signal handler is referred to as <code>Component.isCompleted</code>.</p>
 <a name="a-note-about-accessing-attached-properties-and-signal-handlers"></a>
-<h4>A Note About Accessing Attached Properties and Signal Handlers</h4>
+<h4>说明关于访问附加属性和信号处理器</h4>
 <p>A common error is to assume that attached properties and signal 
 handlers are directly accessible from the children of the object to 
 which these attributes have been attached. This is not the case. The 

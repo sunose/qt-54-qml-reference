@@ -1,0 +1,220 @@
+<!--?xml version="1.0" encoding="UTF-8"?-->
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<!-- topic.qdoc -->
+  <title>Integrating QML and JavaScript | Qt QML 5.4</title>
+  <link rel="stylesheet" type="text/css" href="qtqml-javascript-topic_files/online.css">
+  <link rel="shortcut icon" href="http://d3hp9ud7yvwzy0.cloudfront.net/wp-content/themes/oneqt/images/favicon.ico.gzip">
+  <link rel="stylesheet" href="qtqml-javascript-topic_files/defaulten.css" type="text/css"><link rel="stylesheet" href="qtqml-javascript-topic_files/default.css" type="text/css"><style type="text/css">
+.gsc-control-cse {
+font-family: Arial, sans-serif;
+border-color: #FFFFFF;
+background-color: #FFFFFF;
+}
+.gsc-control-cse .gsc-table-result {
+font-family: Arial, sans-serif;
+}
+input.gsc-input {
+border-color: #D9D9D9;
+}
+input.gsc-search-button {
+border-color: #5CAA15;
+background-color: #5CAA15;
+}
+.gsc-tabHeader.gsc-tabhInactive {
+border-color: #E9E9E9;
+background-color: #E9E9E9;
+}
+.gsc-tabHeader.gsc-tabhActive {
+border-top-color: #5CAA15;
+border-left-color: #E9E9E9;
+border-right-color: #E9E9E9;
+background-color: #FFFFFF;
+}
+.gsc-tabsArea {
+border-color: #E9E9E9;
+}
+.gsc-webResult.gsc-result,
+.gsc-results .gsc-imageResult {
+border-color: #FFFFFF;
+background-color: #FFFFFF;
+}
+.gsc-webResult.gsc-result:hover,
+.gsc-imageResult:hover {
+border-color: #FFFFFF;
+background-color: #FFFFFF;
+}
+.gsc-webResult.gsc-result.gsc-promotion:hover {
+border-color: #FFFFFF;
+background-color: #FFFFFF;
+}
+.gs-webResult.gs-result a.gs-title:link,
+.gs-webResult.gs-result a.gs-title:link b,
+.gs-imageResult a.gs-title:link,
+.gs-imageResult a.gs-title:link b {
+color: #5CAA15;
+}
+.gs-webResult.gs-result a.gs-title:visited,
+.gs-webResult.gs-result a.gs-title:visited b,
+.gs-imageResult a.gs-title:visited,
+.gs-imageResult a.gs-title:visited b {
+color: #46A2DA;
+}
+.gs-webResult.gs-result a.gs-title:hover,
+.gs-webResult.gs-result a.gs-title:hover b,
+.gs-imageResult a.gs-title:hover,
+.gs-imageResult a.gs-title:hover b {
+color: #46A2DA;
+}
+.gs-webResult.gs-result a.gs-title:active,
+.gs-webResult.gs-result a.gs-title:active b,
+.gs-imageResult a.gs-title:active,
+.gs-imageResult a.gs-title:active b {
+color: #5CAA15;
+}
+.gsc-cursor-page {
+color: #5CAA15;
+}
+a.gsc-trailing-more-results:link {
+color: #5CAA15;
+}
+.gs-webResult .gs-snippet,
+.gs-imageResult .gs-snippet,
+.gs-fileFormatType {
+color: #404244;
+}
+.gs-webResult div.gs-visibleUrl,
+.gs-imageResult div.gs-visibleUrl {
+color: #5CAA15;
+}
+.gs-webResult div.gs-visibleUrl-short {
+color: #5CAA15;
+}
+.gs-webResult div.gs-visibleUrl-short {
+display: none;
+}
+.gs-webResult div.gs-visibleUrl-long {
+display: block;
+}
+.gs-promotion div.gs-visibleUrl-short {
+display: none;
+}
+.gs-promotion div.gs-visibleUrl-long {
+display: block;
+}
+.gsc-cursor-box {
+border-color: #FFFFFF;
+}
+.gsc-results .gsc-cursor-box .gsc-cursor-page {
+border-color: #E9E9E9;
+background-color: #FFFFFF;
+color: #5CAA15;
+}
+.gsc-results .gsc-cursor-box .gsc-cursor-current-page {
+border-color: #5CAA15;
+background-color: #FFFFFF;
+color: #46A2DA;
+}
+.gsc-webResult.gsc-result.gsc-promotion {
+border-color: #404244;
+background-color: #FFFFFF;
+}
+.gsc-completion-title {
+color: #5CAA15;
+}
+.gsc-completion-snippet {
+color: #404244;
+}
+.gs-promotion a.gs-title:link,
+.gs-promotion a.gs-title:link *,
+.gs-promotion .gs-snippet a:link {
+color: #0000CC;
+}
+.gs-promotion a.gs-title:visited,
+.gs-promotion a.gs-title:visited *,
+.gs-promotion .gs-snippet a:visited {
+color: #0000CC;
+}
+.gs-promotion a.gs-title:hover,
+.gs-promotion a.gs-title:hover *,
+.gs-promotion .gs-snippet a:hover {
+color: #0000CC;
+}
+.gs-promotion a.gs-title:active,
+.gs-promotion a.gs-title:active *,
+.gs-promotion .gs-snippet a:active {
+color: #0000CC;
+}
+.gs-promotion .gs-snippet,
+.gs-promotion .gs-title .gs-promotion-title-right,
+.gs-promotion .gs-title .gs-promotion-title-right * {
+color: #000000;
+}
+.gs-promotion .gs-visibleUrl,
+.gs-promotion .gs-visibleUrl-short {
+color: #008000;
+}
+</style><style type="text/css">.gscb_a{display:inline-block;font:27px/13px arial,sans-serif}.gsst_a .gscb_a{color:#a1b9ed;cursor:pointer}.gsst_a:hover .gscb_a,.gsst_a:focus .gscb_a{color:#36c}.gsst_a{display:inline-block}.gsst_a{cursor:pointer;padding:0 4px}.gsst_a:hover{text-decoration:none!important}.gsst_b{font-size:16px;padding:0 2px;position:relative;user-select:none;-moz-user-select:none;white-space:nowrap}.gsst_e{opacity:0.55;}.gsst_a:hover .gsst_e,.gsst_a:focus .gsst_e{opacity:0.72;}.gsst_a:active .gsst_e{opacity:1;}.gsst_f{background:white;text-align:left}.gsst_g{background-color:white;border:1px solid #ccc;border-top-color:#d9d9d9;box-shadow:0 2px 4px rgba(0,0,0,0.2);-moz-box-shadow:0 2px 4px rgba(0,0,0,0.2);margin:-1px -3px;padding:0 6px}.gsst_h{background-color:white;height:1px;margin-bottom:-1px;position:relative;top:-1px}.gsib_a{width:100%;padding:4px 6px 0}.gsib_a,.gsib_b{vertical-align:top}.gssb_c{border:0;position:absolute;z-index:989}.gssb_e{border:1px solid #ccc;border-top-color:#d9d9d9;box-shadow:0 2px 4px rgba(0,0,0,0.2);-moz-box-shadow:0 2px 4px rgba(0,0,0,0.2);cursor:default}.gssb_f{visibility:hidden;white-space:nowrap}.gssb_k{border:0;display:block;position:absolute;top:0;z-index:988}.gsdd_a{border:none!important}.gsq_a{padding:0}.gscsep_a{display:none}.gssb_a{padding:0 7px}.gssb_a,.gssb_a td{white-space:nowrap;overflow:hidden;line-height:22px}#gssb_b{font-size:11px;color:#36c;text-decoration:none}#gssb_b:hover{font-size:11px;color:#36c;text-decoration:underline}.gssb_g{text-align:center;padding:8px 0 7px;position:relative}.gssb_h{font-size:15px;height:28px;margin:0.2em}.gssb_i{background:#eee}.gss_ifl{visibility:hidden;padding-left:5px}.gssb_i .gss_ifl{visibility:visible}a.gssb_j{font-size:13px;color:#36c;text-decoration:none;line-height:100%}a.gssb_j:hover{text-decoration:underline}.gssb_l{height:1px;background-color:#e5e5e5}.gssb_m{color:#000;background:#fff}.gsfe_a{border:1px solid #b9b9b9;border-top-color:#a0a0a0;box-shadow:inset 0px 1px 2px rgba(0,0,0,0.1);-moz-box-shadow:inset 0px 1px 2px rgba(0,0,0,0.1);-webkit-box-shadow:inset 0px 1px 2px rgba(0,0,0,0.1);}.gsfe_b{border:1px solid #4d90fe;outline:none;box-shadow:inset 0px 1px 2px rgba(0,0,0,0.3);-moz-box-shadow:inset 0px 1px 2px rgba(0,0,0,0.3);-webkit-box-shadow:inset 0px 1px 2px rgba(0,0,0,0.3);}.gssb_a{padding:0 7px}.gssb_e{border:0}.gssb_l{margin:5px 0}.gssb_c .gsc-completion-container{position:static}.gssb_c{z-index:5000}.gsc-completion-container table{background:transparent;font-size:inherit;font-family:inherit}.gssb_c > tbody > tr,.gssb_c > tbody > tr > td,.gssb_d,.gssb_d > tbody > tr,.gssb_d > tbody > tr > td,.gssb_e,.gssb_e > tbody > tr,.gssb_e > tbody > tr > td{padding:0;margin:0;border:0}.gssb_a table,.gssb_a table tr,.gssb_a table tr td{padding:0;margin:0;border:0}</style><link href="qtqml-javascript-topic_files/sbi.css" rel="stylesheet" type="text/css" id="sbi-style"><script src="qtqml-javascript-topic_files/a_002" type="text/javascript"></script><link rel="stylesheet" href="qtqml-javascript-topic_files/defaulten_002.css" type="text/css"><script src="qtqml-javascript-topic_files/defaulten.js" type="text/javascript"></script></head>
+<body>
+
+<div class="main">
+<div class="main-rounded">
+
+<div class="content">
+    <div class="line">
+        <div class="content mainContent">
+
+<div class="context">
+<h1 class="title">Integrating QML and JavaScript</h1>
+<span class="subtitle"></span>
+<!-- $$$qtqml-javascript-topic.html-description -->
+<div class="descr"> <a name="details"></a>
+<p>The QML language uses a JSON-like syntax and allows various 
+expressions and methods to be defined as JavaScript functions. It also 
+allows users to import JavaScript files and use the functionality those 
+imports provide.</p>
+<p>This allows developers and designers to leverage the knowledge they 
+have of JavaScript to quickly develop both user-interfaces and 
+application logic.</p>
+<a name="javascript-expressions"></a>
+<h2 id="javascript-expressions">JavaScript Expressions</h2>
+<p>QML has a deep JavaScript integration, and allows <a href="http://doc.qt.io/qt-5/qtqml-syntax-objectattributes.html#signal-attributes">signal handlers</a> and <a href="http://doc.qt.io/qt-5/qtqml-syntax-objectattributes.html#method-attributes">methods</a>
+ to be defined in JavaScript. Another core feature of QML is the ability
+ to specify and enforce relationships between object properties using <a href="http://doc.qt.io/qt-5/qtqml-syntax-propertybinding.html">property bindings</a>, which are also defined using JavaScript.</p>
+<p>See the documentation page titled <a href="http://doc.qt.io/qt-5/qtqml-javascript-expressions.html">JavaScript Expressions in QML Documents</a> for more information about using JavaScript expressions in QML.</p>
+<a name="javascript-resources"></a>
+<h2 id="javascript-resources">JavaScript Resources</h2>
+<p>Application logic defined in JavaScript functions may be separated 
+into separate JavaScript files known as JavaScript resources. There are 
+several different kinds of JavaScript resources, with different 
+semantics.</p>
+<p>See the documentation page titled <a href="http://doc.qt.io/qt-5/qtqml-javascript-resources.html">Defining JavaScript Resources In QML</a> for more information about defining JavaScript resources for QML.</p>
+<a name="javascript-imports"></a>
+<h2 id="javascript-imports">JavaScript Imports</h2>
+<p>A QML document may import JavaScript resources, and JavaScript 
+resources may import other JavaScript resources as well as QML modules. 
+This allows an application developer to provide application logic in 
+modular, self-contained files.</p>
+<p>See the documentation page titled <a href="http://doc.qt.io/qt-5/qtqml-javascript-imports.html">Importing JavaScript Resources</a> for more information on how to import JavaScript resources and how to use the functionality they provide.</p>
+<a name="javascript-host-environment"></a>
+<h2 id="javascript-host-environment">JavaScript Host Environment</h2>
+<p>The QML engine provides a JavaScript environment that has some 
+differences to the JavaScript environment provided by a web browser. 
+Certain limitations apply to code running in the environment, and the 
+QML engine provides various objects in the root context which may be 
+unfamiliar to JavaScript developers.</p>
+<p>These limitations and extensions are documented in the description of the <a href="http://doc.qt.io/qt-5/qtqml-javascript-hostenvironment.html">JavaScript Host Environment</a> provided by the QML engine.</p>
+</div>
+<!-- @@@qtqml-javascript-topic.html -->
+   </div>
+   
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+
+<table class="gstl_50 gssb_c" style="width: 627px; display: none; top: 185px; position: absolute; left: 760px;" cellpadding="0" cellspacing="0"><tbody><tr><td class="gssb_f"></td><td style="width: 100%;" class="gssb_e"></td></tr></tbody></table><div style="left: 0px; top: 0px; position: absolute; width: 29px; height: 27px; border: medium none; margin: 0px; padding: 0px; z-index: 2147483647; display: none;" class="sbi_search" id="sbi_camera_button"></div></body></html>

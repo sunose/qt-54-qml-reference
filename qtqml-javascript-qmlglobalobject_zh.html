@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- qmlglobalobject.qdoc -->
+  <title>QML Global Object | Qt QML 5.4</title>
+  <link rel="stylesheet" type="text/css" href="style/online.css" />
+  <link rel="shortcut icon" href="//d3hp9ud7yvwzy0.cloudfront.net/wp-content/themes/oneqt/images/favicon.ico.gzip" />
+  
+</head>
+<body>
+<div class="header" id="header">
+<header id="navbar" class="">
+        <div class="cookies_yum">
+            <div>
+                <img src="http://qt.io/wp-content/themes/oneqt/assets/images/cookie_small.png" align="left">
+                <p class="close_button">
+                    We bake cookies in your browser for a better experience.  Using this site means that you consent. <a href="//qt.io/terms-conditions/">Read More</a>
+                </p>
+                <a class="close"></a>
+            </div>
+        </div>
+        <div class="container">
+                <div class="navbar-header clearfix">
+                    <a href="#" class="navbar-toggle">
+                        <figure>
+                            <span class="line"></span>
+                        </figure>
+                        <span>Menu</span>
+                    </a>
+                    <ul id="menuextras">
+                        <li>
+                            <a href="//qt.io/partners/" data-icon="">
+                                <span>Partners</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a target="_blank" href="http://blog.qt.io/" data-icon="">
+                                <span>Blog</span>
+                            </a>
+                        </li>
+                        <li class="sign-in">
+                             <a data-icon="" class="signin" href="https://account.qt.io/login"><span>Sign in</span></a>
+                        </li>
+                    </ul>
+                    <a href="http://qt.io/" class="navbar-oneQt retina" data-icon="">
+                    </a>
+                    <nav class="navbar-menu clearfix" role="navigation">
+<ul id="mainmenu" class="menu"><li id="menu-item-18" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-18"><a href="http://www.qt.io/download/">Download</a></li>
+<li id="menu-item-12207" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-12207"><a href="http://www.qt.io/qt-for-device-creation/">Device Creation</a></li>
+<li id="menu-item-12208" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-12208"><a href="http://www.qt.io/application-development/">Application Development</a></li>
+<li id="menu-item-1381" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1381"><a href="http://www.qt.io/services/">Services</a></li>
+<li id="menu-item-20" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-20"><a href="http://www.qt.io/developers/">Developers</a></li>
+</ul>                        <ul class="menuextraslanguages">
+                            <li class="active dark"><a class="dark" href="http://qt.io/support/">EN</a></li><li class="dark"><a class="dark" href="http://qt.io/ru/">RU</a></li><li class="dark"><a class="dark" href="http://qt.io/zh-hans/">ZH</a></li></ul>
+                    </nav>
+                </div>
+            </div>
+<div class="big_bar account" style="">
+    <div class="container">
+        <h1><!-- mclude oneqt_no_cache_bMrsJxAh /wp-content/themes/oneqt/php_login_info_bottom_header.php --><!-- /mclude oneqt_no_cache_bMrsJxAh -->
+            <div class="col-1 right big_bar_button account" style="margin-top:5px !important;"></div>
+        </h1>
+    </div>
+</div>
+</header>
+</div>
+<div class="main">
+<div class="main-rounded">
+<div class="navigationbar">
+    <ul class="sub-navigation">
+        <li><a href="http://wiki.qt.io/">Wiki</a></li>
+        <li><a href="http://doc.qt.io/" class="active">Documentation</a></li>
+        <li><a href="http://forum.qt.io/">Forum</a></li>
+        <li><a href="https://bugreports.qt.io/">Bug Reports</a></li>
+        <li><a href="https://codereview.qt-project.org/">Code Review</a></li>
+    </ul>
+    <div id="main_title_bar">
+        <h1>Qt Documentation</h1>
+        <div class="search_bar">
+        <script>
+            (function() {
+                var cx = '003672281345882769388:1y4pftuq8so';
+                var gcse = document.createElement('script');
+                gcse.type = 'text/javascript';
+                gcse.async = true;
+                gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//www.google.com/cse/cse.js?cx=' + cx;
+                var s = document.getElementsByTagName('script')[0];
+                s.parentNode.insertBefore(gcse, s);
+            })();
+        </script>
+        <gcse:searchbox-only resultsUrl="search-results.html"></gcse:searchbox-only>
+    </div></div>
+    <ul>
+<li><a href="index.html">Qt 5.4</a></li>
+<li><a href="qtqml-index.html">Qt QML</a></li>
+<li>QML Global Object</li>
+    </ul>
+</div>
+<div class="content">
+    <div class="line">
+        <div class="content mainContent">
+<div class="sidebar">
+<div class="toc">
+<h3><a name="toc">Contents</a></h3>
+<ul>
+<li class="level1"><a href="#xmlhttprequest">XMLHttpRequest</a></li>
+</ul>
+</div>
+<div class="sidebar-content" id="sidebar-content"></div></div>
+<a name="xmlhttprequest"></a><div class="context">
+<h1 class="title">QML Global Object</h1>
+<span class="subtitle"></span>
+<!-- $$$qtqml-javascript-qmlglobalobject.html-description -->
+<div class="descr"> <a name="details"></a>
+<p>The QML JavaScript host environment implements the following host objects and functions. These are built in and can be used from any JavaScript code loaded in QML, without additional imports:</p>
+<ul>
+<li>The <a href="qml-qtqml-qt.html#qmlglobalqtobject">Qt object</a>: This object is specific to QML, and provides helper methods and properties specific to the QML environment.</li>
+<li>qsTr(), qsTranslate(), qsTrId(), <a href="qtglobal.html#QT_TR_NOOP">QT_TR_NOOP</a>(), <a href="qtglobal.html#QT_TRANSLATE_NOOP">QT_TRANSLATE_NOOP</a>(), and <a href="qtglobal.html#QT_TRID_NOOP">QT_TRID_NOOP</a>() functions: These functions are specific to QML, and provide <a href="linguist-overview.html">translation capabilities</a> to the QML environment.</li>
+<li>gc() function: This function is specific to QML, and provides a way to manually trigger garbage collection.</li>
+<li>print() function: This function is specific to QML, and provides a simple way to output information to the console.</li>
+<li>The <a href="qtquick-debugging.html#console-api">console object</a>: This object implements a subset of the <a href="http://getfirebug.com/wiki/index.php/Console_API">FireBug Console API</a>.</li>
+<li><a href="qtqml-javascript-qmlglobalobject.html#xmlhttprequest">XMLHttpRequest</a>, DOMException: These objects implement a subset of the <a href="http://www.w3.org/TR/XMLHttpRequest/">W3C XMLHttpRequest specification</a>.</li>
+</ul>
+<a name="xmlhttprequest"></a>
+<h2 id="xmlhttprequest">XMLHttpRequest</h2>
+<p>The <a href="qtqml-javascript-qmlglobalobject.html#xmlhttprequest">XMLHttpRequest</a> object, which can be used to asynchronously obtain data from over a network.</p>
+<p>The <a href="qtqml-javascript-qmlglobalobject.html#xmlhttprequest">XMLHttpRequest</a> API implements the same <a href="http://www.w3.org/TR/XMLHttpRequest/">W3C standard</a> as many popular web browsers with following exceptions:</p>
+<ul>
+<li>QML's <a href="qtqml-javascript-qmlglobalobject.html#xmlhttprequest">XMLHttpRequest</a> does not enforce the same origin policy.</li>
+<li>QML's <a href="qtqml-javascript-qmlglobalobject.html#xmlhttprequest">XMLHttpRequest</a> does not support <i>synchronous</i> requests.</li>
+</ul>
+<p>Additionally, the <code>responseXML</code> XML DOM tree currently supported by QML is a reduced subset of the <a href="http://www.w3.org/TR/DOM-Level-3-Core/">DOM Level 3 Core</a> API supported in a web browser. The following objects and properties are supported by the QML implementation:</p>
+<div class="table"><table class="generic">
+ <thead><tr class="qt-style"><th ><b>Node</b></th><th ><b>Document</b></th><th ><b>Element</b></th><th ><b>Attr</b></th><th ><b>CharacterData</b></th><th ><b>Text</b></th></tr></thead>
+<tr valign="top" class="odd"><td ><ul>
+<li>nodeName</li>
+<li>nodeValue</li>
+<li>nodeType</li>
+<li>parentNode</li>
+<li>childNodes</li>
+<li>firstChild</li>
+<li>lastChild</li>
+<li>previousSibling</li>
+<li>nextSibling</li>
+<li>attributes</li>
+</ul>
+</td><td ><ul>
+<li>xmlVersion</li>
+<li>xmlEncoding</li>
+<li>xmlStandalone</li>
+<li>documentElement</li>
+</ul>
+</td><td ><ul>
+<li>tagName</li>
+</ul>
+</td><td ><ul>
+<li>name</li>
+<li>value</li>
+<li>ownerElement</li>
+</ul>
+</td><td ><ul>
+<li>data</li>
+<li>length</li>
+</ul>
+</td><td ><ul>
+<li>isElementContentWhitespace</li>
+<li>wholeText</li>
+</ul>
+</td></tr>
+</table></div>
+<p>The <a href="qtqml-xmlhttprequest-example.html">XMLHttpRequest example</a> demonstrates how to use the <a href="qtqml-javascript-qmlglobalobject.html#xmlhttprequest">XMLHttpRequest</a> object to make a request and read the response headers.</p>
+</div>
+<!-- @@@qtqml-javascript-qmlglobalobject.html -->
+   </div>
+   <p class="copy-notice">
+   <acronym title="Copyright">&copy;</acronym> 2015 The Qt Company Ltd.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.     The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.     Qt and respective logos are trademarks of The Qt Company Ltd.     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="footer">
+<footer id="footerbar">
+    <div class="footer-main">
+            <div class="container clearfix">
+                <nav class="footer-nav clearfix">
+                    <div class="menu-footer-menu-container"><ul id="menu-footer-menu" class="menu"><li id="menu-item-1350" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-1350"><a href="http://qt.io/about-us/">About us</a>
+<ul class="sub-menu">
+    <li id="menu-item-1353" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1353"><a href="http://qt.io/events/">Training &amp; Events</a></li>
+    <li id="menu-item-1596" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1596"><a href="http://qt.io/news/">News</a></li>
+    <li id="menu-item-1354" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1354"><a href="http://qt.io/resource-center/">Resource Center</a></li>
+    <li id="menu-item-1352" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1352"><a href="http://qt.io/partners/">Partners</a></li>
+    <li id="menu-item-1349" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1349"><a href="http://qt.io/careers/">Careers</a></li>
+    <li id="menu-item-11676" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-11676"><a href="http://qt.io/locations/">Locations</a></li>
+</ul>
+</li>
+<li id="menu-item-1355" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-1355"><a href="http://qt.io/product/">Product</a>
+<ul class="sub-menu">
+    <li id="menu-item-1358" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1358"><a href="http://qt.io/qt-framework/">Qt Framework</a></li>
+    <li id="menu-item-1356" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1356"><a href="http://qt.io/qt-features/">Qt Features</a></li>
+    <li id="menu-item-1359" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1359"><a href="http://qt.io/qt-quick/">Qt Quick</a></li>
+    <li id="menu-item-1357" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1357"><a href="http://qt.io/qt-for-device-creation/">Qt for Device Creation</a></li>
+    <li id="menu-item-10159" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-10159"><a href="http://qt.io/mobile-app-development/">Qt for Mobile Apps</a></li>
+    <li id="menu-item-12576" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-12576"><a href="http://qt.io/qt-in-use/">Qt in Use</a></li>
+</ul>
+</li>
+<li id="menu-item-33" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-33"><a href="http://qt.io/developers/">Developers</a>
+<ul class="sub-menu">
+    <li id="menu-item-1365" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1365"><a href="http://doc.qt.io/">Documentation</a></li>
+    <li id="menu-item-1364" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1364"><a href="http://doc.qt.io/qt-5/qtexamplesandtutorials.html">Examples &amp; Tutorials</a></li>
+    <li id="menu-item-1363" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1363"><a href="http://doc.qt.io/qt-5/topics-app-development.html">Tools</a></li>
+    <li id="menu-item-1361" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1361"><a href="http://wiki.qt.io/">Wiki</a></li>
+    <li id="menu-item-1360" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1360"><a href="http://forum.qt.io/">Forums</a></li>
+    <li id="menu-item-1362" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1362"><a href="http://wiki.qt.io/Qt_Contribution_Guidelines">Contribute to Qt</a></li>
+</ul>
+</li>
+<li id="menu-item-1347" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-ancestor current-menu-parent current_page_parent current_page_ancestor menu-item-has-children menu-item-1347"><a href="http://qt.io/services/">Services</a>
+<ul class="sub-menu">
+    <li id="menu-item-32" class="menu-item menu-item-type-post_type menu-item-object-page page_item page-item-14 menu-item-32"><a href="http://qt.io/support/">Support</a></li>
+    <li id="menu-item-4028" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4028"><a href="http://qt.io/services-technology-evaluation/">Technology Evaluation</a></li>
+    <li id="menu-item-4027" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4027"><a href="http://qt.io/services-proof-of-concept/">Proof of Concept</a></li>
+    <li id="menu-item-4026" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4026"><a href="http://qt.io/services-design-implementation/">Design &amp; Implementation</a></li>
+    <li id="menu-item-4025" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4025"><a href="http://qt.io/services-productization/">Productization</a></li>
+    <li id="menu-item-5124" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5124"><a href="https://qtcloudservices.com/">Qt Cloud Services</a></li>
+</ul>
+</li>
+<li id="menu-item-1403" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-1403"><a href="http://qt.io/download/">Download</a>
+<ul class="sub-menu">
+    <li id="menu-item-11677" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-11677"><a href="http://qt.io/download">Free 30-Day Trial</a></li>
+    <li id="menu-item-1982" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1982"><a href="http://qt.io/buy-enterprise-step-2/">Enterprise</a></li>
+    <li id="menu-item-1985" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1985"><a href="http://qt.io/buy-professional-step-2/">Professional</a></li>
+    <li id="menu-item-3346" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3346"><a href="http://qt.io/buy-indiemobile-step-2/">Indie Mobile</a></li>
+    <li id="menu-item-3343" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3343"><a href="http://qt.io/download-open-source/">Community</a></li>
+    <li id="menu-item-1415" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1415"><a href="http://qt.io/terms-conditions/">Legal | Terms &amp; Conditions</a></li>
+</ul>
+</li>
+</ul></div></nav>
+<a href="http://qt.io/about-us/" target="_blank" class="theqtcompany"></a>
+    <div class="footer-social clearfix">
+        <div class="facebook">
+            <iframe scrolling="no" frameborder="0" allowTransparency="true" src="//www.facebook.com/plugins/like.php?href=https%3A%2F%2Fwww.facebook.com%2Fqtbydigia&amp;width&amp;layout=button_count&amp;action=like&amp;show_faces=true&amp;share=false&amp;height=21" style="border:none;overflow:hidden;height:21px;"></iframe>
+        </div>
+        <div class="twitter">
+            <iframe id="twitter-widget-0" scrolling="no" frameborder="0" allowtransparency="true" src="http://platform.twitter.com/widgets/follow_button.33b190ea0cba008796487b65df7f6d8e.en.html#_=1414403615717&amp;id=twitter-widget-0&amp;lang=en&amp;screen_name=qtproject&amp;show_count=true&amp;show_screen_name=false&amp;size=m" class="twitter-follow-button twitter-follow-button" title="Twitter Follow Button" data-twttr-rendered="true" style="width: 160px; height: 20px;"></iframe>
+        </div>
+    </div>
+</div>
+</div>
+<div class="disclaimer">
+<div class="container clearfix no_discs">
+    <ul id="menu-footer-submenu" class="right clearfix"><li id="menu-item-1795" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1795"><a title="Sign into your account." href="https://account.qt.io/login">Sign In</a></li>
+      <li id="menu-item-10375" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-10375"><a href="mailto:feedback@theqtcompany.com?Subject=Feedback%20about%20doc.qt.io%20site">Feedback</a></li>
+      <li id="menu-item-1494" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1494"><a href="http://qt.io/contact-us/">Contact us</a></li>
+      <li id="menu-item-4472" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4472"><a href="http://qt.io/about-us/">© 2015 The Qt Company</a></li>
+    </ul>
+</div>
+</div>
+</footer>
+</div>
+</body>
+</html>

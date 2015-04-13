@@ -1,0 +1,567 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- functionlist.qdoc -->
+  <title>List of JavaScript Objects and Functions | Qt QML 5.4</title>
+  <link rel="stylesheet" type="text/css" href="style/online.css" />
+  <link rel="shortcut icon" href="//d3hp9ud7yvwzy0.cloudfront.net/wp-content/themes/oneqt/images/favicon.ico.gzip" />
+  <script type="text/javascript"> wpThemeFolder = 'http://qt.io/wp-content/themes/oneqt'; </script>
+  <script type="text/javascript" src="http://d3hp9ud7yvwzy0.cloudfront.net/wp-content/themes/oneqt/js/combo.js.gzip"></script>
+  <script type="text/javascript" src="scripts/main.js"></script>
+  <script type="text/javascript" src="scripts/extras.js"></script>
+  <script type="text/javascript">
+  $(function(){
+     $("#sidebar-content").load("style/qt5-sidebar.html");
+  });
+  </script>
+  <script type="text/javascript">
+    (function (i, s, o, g, r, a, m) {
+      i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+        (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date(); a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', 'UA-54043535-2', 'qt.io');
+    ga('set', 'forceSSL', true);
+    ga('send', 'pageview');
+  </script>
+</head>
+<body>
+<div class="header" id="header">
+<header id="navbar" class="">
+        <div class="cookies_yum">
+            <div>
+                <img src="http://qt.io/wp-content/themes/oneqt/assets/images/cookie_small.png" align="left">
+                <p class="close_button">
+                    We bake cookies in your browser for a better experience.  Using this site means that you consent. <a href="//qt.io/terms-conditions/">Read More</a>
+                </p>
+                <a class="close"></a>
+            </div>
+        </div>
+        <div class="container">
+                <div class="navbar-header clearfix">
+                    <a href="#" class="navbar-toggle">
+                        <figure>
+                            <span class="line"></span>
+                        </figure>
+                        <span>Menu</span>
+                    </a>
+                    <ul id="menuextras">
+                        <li>
+                            <a href="//qt.io/partners/" data-icon="">
+                                <span>Partners</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a target="_blank" href="http://blog.qt.io/" data-icon="">
+                                <span>Blog</span>
+                            </a>
+                        </li>
+                        <li class="sign-in">
+                             <a data-icon="" class="signin" href="https://account.qt.io/login"><span>Sign in</span></a>
+                        </li>
+                    </ul>
+                    <a href="http://qt.io/" class="navbar-oneQt retina" data-icon="">
+                    </a>
+                    <nav class="navbar-menu clearfix" role="navigation">
+<ul id="mainmenu" class="menu"><li id="menu-item-18" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-18"><a href="http://www.qt.io/download/">Download</a></li>
+<li id="menu-item-12207" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-12207"><a href="http://www.qt.io/qt-for-device-creation/">Device Creation</a></li>
+<li id="menu-item-12208" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-12208"><a href="http://www.qt.io/application-development/">Application Development</a></li>
+<li id="menu-item-1381" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1381"><a href="http://www.qt.io/services/">Services</a></li>
+<li id="menu-item-20" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-20"><a href="http://www.qt.io/developers/">Developers</a></li>
+</ul>                        <ul class="menuextraslanguages">
+                            <li class="active dark"><a class="dark" href="http://qt.io/support/">EN</a></li><li class="dark"><a class="dark" href="http://qt.io/ru/">RU</a></li><li class="dark"><a class="dark" href="http://qt.io/zh-hans/">ZH</a></li></ul>
+                    </nav>
+                </div>
+            </div>
+<div class="big_bar account" style="">
+    <div class="container">
+        <h1><!-- mclude oneqt_no_cache_bMrsJxAh /wp-content/themes/oneqt/php_login_info_bottom_header.php --><!-- /mclude oneqt_no_cache_bMrsJxAh -->
+            <div class="col-1 right big_bar_button account" style="margin-top:5px !important;"></div>
+        </h1>
+    </div>
+</div>
+</header>
+</div>
+<div class="main">
+<div class="main-rounded">
+<div class="navigationbar">
+    <ul class="sub-navigation">
+        <li><a href="http://wiki.qt.io/">Wiki</a></li>
+        <li><a href="http://doc.qt.io/" class="active">Documentation</a></li>
+        <li><a href="http://forum.qt.io/">Forum</a></li>
+        <li><a href="https://bugreports.qt.io/">Bug Reports</a></li>
+        <li><a href="https://codereview.qt-project.org/">Code Review</a></li>
+    </ul>
+    <div id="main_title_bar">
+        <h1>Qt Documentation</h1>
+        <div class="search_bar">
+        <script>
+            (function() {
+                var cx = '003672281345882769388:1y4pftuq8so';
+                var gcse = document.createElement('script');
+                gcse.type = 'text/javascript';
+                gcse.async = true;
+                gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//www.google.com/cse/cse.js?cx=' + cx;
+                var s = document.getElementsByTagName('script')[0];
+                s.parentNode.insertBefore(gcse, s);
+            })();
+        </script>
+        <gcse:searchbox-only resultsUrl="search-results.html"></gcse:searchbox-only>
+    </div></div>
+    <ul>
+<li><a href="index.html">Qt 5.4</a></li>
+<li><a href="qtqml-index.html">Qt QML</a></li>
+<li>List of JavaScript Objects and Functions</li>
+    </ul>
+</div>
+<div class="content">
+    <div class="line">
+        <div class="content mainContent">
+<div class="sidebar">
+<div class="toc">
+<h3><a name="toc">Contents</a></h3>
+<ul>
+<li class="level1"><a href="#the-global-object">The Global Object</a></li>
+<li class="level2"><a href="#value-properties">Value Properties</a></li>
+<li class="level2"><a href="#function-properties">Function Properties</a></li>
+<li class="level2"><a href="#constructor-properties">Constructor Properties</a></li>
+<li class="level2"><a href="#other-properties">Other Properties</a></li>
+<li class="level1"><a href="#the-object-object">The Object Object</a></li>
+<li class="level2"><a href="#object-constructor">Object Constructor</a></li>
+<li class="level2"><a href="#object-prototype">Object Prototype</a></li>
+<li class="level1"><a href="#function-objects">Function Objects</a></li>
+<li class="level2"><a href="#function-prototype">Function Prototype</a></li>
+<li class="level1"><a href="#array-objects">Array Objects</a></li>
+<li class="level2"><a href="#array-prototype-object">Array Prototype Object</a></li>
+<li class="level1"><a href="#string-objects">String Objects</a></li>
+<li class="level2"><a href="#string-prototype-object">String Prototype Object</a></li>
+<li class="level1"><a href="#boolean-objects">Boolean Objects</a></li>
+<li class="level2"><a href="#boolean-prototype-object">Boolean Prototype Object</a></li>
+<li class="level1"><a href="#number-objects">Number Objects</a></li>
+<li class="level2"><a href="#number-prototype-object">Number Prototype Object</a></li>
+<li class="level1"><a href="#the-math-object">The Math Object</a></li>
+<li class="level2"><a href="#value-properties">Value Properties</a></li>
+<li class="level2"><a href="#function-properties">Function Properties</a></li>
+<li class="level1"><a href="#date-objects">Date Objects</a></li>
+<li class="level2"><a href="#date-prototype-object">Date Prototype Object</a></li>
+<li class="level1"><a href="#regexp-objects">RegExp Objects</a></li>
+<li class="level2"><a href="#regexp-prototype-object">RegExp Prototype Object</a></li>
+<li class="level1"><a href="#error-objects">Error Objects</a></li>
+<li class="level2"><a href="#error-prototype-object">Error Prototype Object</a></li>
+<li class="level1"><a href="#the-json-object">The JSON Object</a></li>
+<li class="level2"><a href="#function-properties">Function Properties</a></li>
+</ul>
+</div>
+<div class="sidebar-content" id="sidebar-content"></div></div>
+<div class="context">
+<h1 class="title">List of JavaScript Objects and Functions</h1>
+<span class="subtitle"></span>
+<!-- $$$qtqml-javascript-functionlist.html-description -->
+<div class="descr"> <a name="details"></a>
+<p>This reference contains a list of objects, functions and properties supported by the <a href="qqmlengine.html">QML engine</a>. For a detailed description, see the <a href="http://www.ecma-international.org/publications/standards/Ecma-262.htm">ECMA-262</a> specification.</p>
+<a name="the-global-object"></a>
+<h2 id="the-global-object">The Global Object</h2>
+<a name="value-properties"></a>
+<h3 >Value Properties</h3>
+<ul>
+<li>NaN</li>
+<li>Infinity</li>
+<li>undefined</li>
+</ul>
+<a name="function-properties"></a>
+<h3 >Function Properties</h3>
+<ul>
+<li>eval(x)</li>
+<li>parseInt(string, radix)</li>
+<li>parseFloat(string)</li>
+<li>isNaN(number)</li>
+<li>isFinite(number)</li>
+<li>decodeURI(encodedURI)</li>
+<li>decodeURIComponent(encodedURIComponent)</li>
+<li>encodeURI(uri)</li>
+<li>encodeURIComponent(uriComponent)</li>
+</ul>
+<a name="constructor-properties"></a>
+<h3 >Constructor Properties</h3>
+<ul>
+<li>Object</li>
+<li>Function</li>
+<li>Array</li>
+<li>String</li>
+<li>Boolean</li>
+<li>Number</li>
+<li>Date</li>
+<li>RegExp</li>
+<li>Error</li>
+<li>EvalError</li>
+<li>RangeError</li>
+<li>ReferenceError</li>
+<li>SyntaxError</li>
+<li>TypeError</li>
+<li>URIError</li>
+</ul>
+<a name="other-properties"></a>
+<h3 >Other Properties</h3>
+<ul>
+<li>Math</li>
+<li>JSON</li>
+</ul>
+<a name="the-object-object"></a>
+<h2 id="the-object-object">The Object Object</h2>
+<a name="object-constructor"></a>
+<h3 >Object Constructor</h3>
+<a name="function-properties"></a>
+<h4 >Function Properties</h4>
+<ul>
+<li>getPrototypeOf(O)</li>
+<li>getOwnPropertyDescriptor(O, P)</li>
+<li>getOwnPropertyNames(O)</li>
+<li>create(O [, Properties])</li>
+<li>defineProperty(O, P, Attributes)</li>
+<li>defineProperties(O, Properties)</li>
+<li>keys(O)</li>
+<li>seal(O)</li>
+<li>isSealed(O)</li>
+<li>freeze(O)</li>
+<li>isFrozen(O)</li>
+<li>preventExtensions(O)</li>
+<li>isExtensible(O)</li>
+</ul>
+<a name="object-prototype"></a>
+<h3 >Object Prototype</h3>
+<a name="function-properties"></a>
+<h4 >Function Properties</h4>
+<ul>
+<li>toString()</li>
+<li>toLocaleString()</li>
+<li>valueOf()</li>
+<li>hasOwnProperty(V)</li>
+<li>isPrototypeOf(V)</li>
+<li>propertyIsEnumerable(V)</li>
+</ul>
+<a name="function-objects"></a>
+<h2 id="function-objects">Function Objects</h2>
+<a name="function-prototype"></a>
+<h3 >Function Prototype</h3>
+<a name="function-properties"></a>
+<h4 >Function Properties</h4>
+<ul>
+<li>toString()</li>
+<li>apply(thisArg, argArray)</li>
+<li>call(thisArg [, arg1 [, arg2, ..&#x2e;]])</li>
+<li>bind((thisArg [, arg1 [, arg2, …]])</li>
+</ul>
+<a name="array-objects"></a>
+<h2 id="array-objects">Array Objects</h2>
+<a name="array-prototype-object"></a>
+<h3 >Array Prototype Object</h3>
+<a name="function-properties"></a>
+<h4 >Function Properties</h4>
+<ul>
+<li>toString()</li>
+<li>toLocaleString()</li>
+<li>concat([item1 [, item2 [, ..&#x2e;]]])</li>
+<li>join(separator)</li>
+<li>pop()</li>
+<li>push([item1 [, item2 [, ..&#x2e;]]])</li>
+<li>reverse()</li>
+<li>shift()</li>
+<li>slice(start, end)</li>
+<li>sort(comparefn)</li>
+<li>splice(start, deleteCount[, item1 [, item2 [, ..&#x2e;]]])</li>
+<li>unshift([item1 [, item2 [, ..&#x2e;]]])</li>
+<li>indexOf(searchElement [, fromIndex])</li>
+<li>lastIndexOf(searchElement [, fromIndex])</li>
+<li>every(callbackfn [, thisArg])</li>
+<li>some(callbackfn [, thisArg])</li>
+<li><a href="containers.html#foreach">forEach</a>(callbackfn [, thisArg])</li>
+<li>map(callbackfn [, thisArg])</li>
+<li>filter(callbackfn [, thisArg])</li>
+<li>reduce(callbackfn [, initialValue])</li>
+<li>reduceRight(callbackfn [, initialValue])</li>
+</ul>
+<a name="string-objects"></a>
+<h2 id="string-objects">String Objects</h2>
+<a name="string-prototype-object"></a>
+<h3 >String Prototype Object</h3>
+<a name="function-properties"></a>
+<h4 >Function Properties</h4>
+<ul>
+<li>toString()</li>
+<li>valueOf()</li>
+<li>charAt(pos)</li>
+<li>charCodeAt(pos)</li>
+<li>concat([string1 [, string2 [, ..&#x2e;]]])</li>
+<li>indexOf(searchString ,position)</li>
+<li>lastIndexOf(searchString, position)</li>
+<li>localeCompare(that)</li>
+<li>match(regexp)</li>
+<li>replace(searchValue, replaceValue)</li>
+<li>search(regexp)</li>
+<li>slice(start, end)</li>
+<li>split(separator, limit)</li>
+<li>substring(start, end)</li>
+<li>toLowerCase()</li>
+<li>toLocaleLowerCase()</li>
+<li>toUpperCase()</li>
+<li>toLocaleUpperCase()</li>
+<li>trim()</li>
+</ul>
+<p>Additionally, the QML engine adds the following functions to the <a href="qml-qtqml-string.html">String</a> prototype:</p>
+<ul>
+<li><a href="qml-qtqml-string.html#arg-method">arg()</a></li>
+</ul>
+<a name="boolean-objects"></a>
+<h2 id="boolean-objects">Boolean Objects</h2>
+<a name="boolean-prototype-object"></a>
+<h3 >Boolean Prototype Object</h3>
+<a name="function-properties"></a>
+<h4 >Function Properties</h4>
+<ul>
+<li>toString()</li>
+<li>valueOf()</li>
+</ul>
+<a name="number-objects"></a>
+<h2 id="number-objects">Number Objects</h2>
+<a name="number-prototype-object"></a>
+<h3 >Number Prototype Object</h3>
+<a name="function-properties"></a>
+<h4 >Function Properties</h4>
+<ul>
+<li>toString(radix)</li>
+<li>toLocaleString()</li>
+<li>toFixed(fractionDigits)</li>
+<li>toExponential(fractionDigits)</li>
+<li>toPrecision(precision)</li>
+</ul>
+<p>Additionally, the QML engine adds the following functions to the <a href="qml-qtqml-number.html">Number</a> prototype:</p>
+<ul>
+<li><a href="qml-qtqml-number.html#fromLocaleString-method">fromLocaleString(locale, number)</a></li>
+<li><a href="qml-qtqml-number.html#toLocaleCurrencyString-method">toLocaleCurrencyString(locale, symbol)</a></li>
+<li><a href="qml-qtqml-number.html#toLocaleString-method">toLocaleString(locale, format, precision)</a></li>
+</ul>
+<a name="the-math-object"></a>
+<h2 id="the-math-object">The Math Object</h2>
+<a name="value-properties"></a>
+<h3 >Value Properties</h3>
+<ul>
+<li>E</li>
+<li>LN10</li>
+<li>LN2</li>
+<li>LOG2E</li>
+<li>LOG10E</li>
+<li>PI</li>
+<li>SQRT1_2</li>
+<li>SQRT2</li>
+</ul>
+<a name="function-properties"></a>
+<h3 >Function Properties</h3>
+<ul>
+<li>abs(x)</li>
+<li>acos(x)</li>
+<li>asin(x)</li>
+<li>atan(x)</li>
+<li>atan2(y, x)</li>
+<li>ceil(x)</li>
+<li>cos(x)</li>
+<li>exp(x)</li>
+<li>floor(x)</li>
+<li>log(x)</li>
+<li>max([value1 [, value2 [, ..&#x2e;]]])</li>
+<li>min([value1 [, value2 [, ..&#x2e;]]])</li>
+<li>pow(x, y)</li>
+<li>random()</li>
+<li>round(x)</li>
+<li>sin(x)</li>
+<li>sqrt(x)</li>
+<li>tan(x)</li>
+</ul>
+<a name="date-objects"></a>
+<h2 id="date-objects">Date Objects</h2>
+<a name="date-prototype-object"></a>
+<h3 >Date Prototype Object</h3>
+<a name="function-properties"></a>
+<h4 >Function Properties</h4>
+<ul>
+<li>toString()</li>
+<li>toDateString()</li>
+<li>toTimeString()</li>
+<li>toLocaleString()</li>
+<li>toLocaleDateString()</li>
+<li>toLocaleTimeString()</li>
+<li>valueOf()</li>
+<li>getTime()</li>
+<li>getFullYear()</li>
+<li>getUTCFullYear()</li>
+<li>getMonth()</li>
+<li>getUTCMonth()</li>
+<li>getDate()</li>
+<li>getUTCDate()</li>
+<li>getDay()</li>
+<li>getUTCDay()</li>
+<li>getHours()</li>
+<li>getUTCHours()</li>
+<li>getMinutes()</li>
+<li>getUTCMinutes()</li>
+<li>getSeconds()</li>
+<li>getUTCSeconds()</li>
+<li>getMilliseconds()</li>
+<li>getUTCMilliseconds()</li>
+<li>getTimeZoneOffset()</li>
+<li>setTime(time)</li>
+<li>setMilliseconds(ms)</li>
+<li>setUTCMilliseconds(ms)</li>
+<li>setSeconds(sec [, ms])</li>
+<li>setUTCSeconds(sec [, ms])</li>
+<li>setMinutes(min [, sec [, ms]])</li>
+<li>setUTCMinutes(min [, sec [, ms]])</li>
+<li>setHours(hour [, min [, sec [, ms]]])</li>
+<li>setUTCHours(hour [, min [, sec [, ms]]])</li>
+<li>setDate(date)</li>
+<li>setUTCDate(date)</li>
+<li>setMonth(month [, date])</li>
+<li>setUTCMonth(month [, date])</li>
+<li>setFullYear(year [, month [, date]])</li>
+<li>setUTCFullYear(year [, month [, date]])</li>
+<li>toUTCString()</li>
+<li>toISOString()</li>
+<li>toJSON()</li>
+</ul>
+<p>Additionally, the QML engine adds the following functions to the <a href="qml-qtqml-date.html">Date</a> prototype:</p>
+<ul>
+<li><a href="qml-qtqml-date.html#timeZoneUpdated-method">timeZoneUpdated()</a></li>
+<li><a href="qml-qtqml-date.html#toLocaleDateString-method">toLocaleDateString(locale, format)</a></li>
+<li><a href="qml-qtqml-date.html#toLocaleString-method">toLocaleString(locale, format)</a></li>
+<li><a href="qml-qtqml-date.html#toLocaleTimeString-method">toLocaleTimeString(locale, format)</a></li>
+</ul>
+<a name="regexp-objects"></a>
+<h2 id="regexp-objects">RegExp Objects</h2>
+<a name="regexp-prototype-object"></a>
+<h3 >RegExp Prototype Object</h3>
+<a name="function-properties"></a>
+<h4 >Function Properties</h4>
+<ul>
+<li>exec(string)</li>
+<li>test(string)</li>
+<li>toString()</li>
+</ul>
+<a name="error-objects"></a>
+<h2 id="error-objects">Error Objects</h2>
+<a name="error-prototype-object"></a>
+<h3 >Error Prototype Object</h3>
+<a name="value-properties"></a>
+<h4 >Value Properties</h4>
+<ul>
+<li>name</li>
+<li>message</li>
+</ul>
+<a name="function-properties"></a>
+<h4 >Function Properties</h4>
+<ul>
+<li>toString()</li>
+</ul>
+<a name="the-json-object"></a>
+<h2 id="the-json-object">The JSON Object</h2>
+<a name="function-properties"></a>
+<h3 >Function Properties</h3>
+<ul>
+<li>parse(text [, reviver])</li>
+<li>stringify(value [, replacer [, space]])</li>
+</ul>
+</div>
+<!-- @@@qtqml-javascript-functionlist.html -->
+   </div>
+   <p class="copy-notice">
+   <acronym title="Copyright">&copy;</acronym> 2015 The Qt Company Ltd.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.     The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.     Qt and respective logos are trademarks of The Qt Company Ltd.     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="footer">
+<footer id="footerbar">
+    <div class="footer-main">
+            <div class="container clearfix">
+                <nav class="footer-nav clearfix">
+                    <div class="menu-footer-menu-container"><ul id="menu-footer-menu" class="menu"><li id="menu-item-1350" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-1350"><a href="http://qt.io/about-us/">About us</a>
+<ul class="sub-menu">
+    <li id="menu-item-1353" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1353"><a href="http://qt.io/events/">Training &amp; Events</a></li>
+    <li id="menu-item-1596" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1596"><a href="http://qt.io/news/">News</a></li>
+    <li id="menu-item-1354" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1354"><a href="http://qt.io/resource-center/">Resource Center</a></li>
+    <li id="menu-item-1352" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1352"><a href="http://qt.io/partners/">Partners</a></li>
+    <li id="menu-item-1349" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1349"><a href="http://qt.io/careers/">Careers</a></li>
+    <li id="menu-item-11676" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-11676"><a href="http://qt.io/locations/">Locations</a></li>
+</ul>
+</li>
+<li id="menu-item-1355" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-1355"><a href="http://qt.io/product/">Product</a>
+<ul class="sub-menu">
+    <li id="menu-item-1358" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1358"><a href="http://qt.io/qt-framework/">Qt Framework</a></li>
+    <li id="menu-item-1356" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1356"><a href="http://qt.io/qt-features/">Qt Features</a></li>
+    <li id="menu-item-1359" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1359"><a href="http://qt.io/qt-quick/">Qt Quick</a></li>
+    <li id="menu-item-1357" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1357"><a href="http://qt.io/qt-for-device-creation/">Qt for Device Creation</a></li>
+    <li id="menu-item-10159" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-10159"><a href="http://qt.io/mobile-app-development/">Qt for Mobile Apps</a></li>
+    <li id="menu-item-12576" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-12576"><a href="http://qt.io/qt-in-use/">Qt in Use</a></li>
+</ul>
+</li>
+<li id="menu-item-33" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-33"><a href="http://qt.io/developers/">Developers</a>
+<ul class="sub-menu">
+    <li id="menu-item-1365" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1365"><a href="http://doc.qt.io/">Documentation</a></li>
+    <li id="menu-item-1364" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1364"><a href="http://doc.qt.io/qt-5/qtexamplesandtutorials.html">Examples &amp; Tutorials</a></li>
+    <li id="menu-item-1363" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1363"><a href="http://doc.qt.io/qt-5/topics-app-development.html">Tools</a></li>
+    <li id="menu-item-1361" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1361"><a href="http://wiki.qt.io/">Wiki</a></li>
+    <li id="menu-item-1360" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1360"><a href="http://forum.qt.io/">Forums</a></li>
+    <li id="menu-item-1362" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1362"><a href="http://wiki.qt.io/Qt_Contribution_Guidelines">Contribute to Qt</a></li>
+</ul>
+</li>
+<li id="menu-item-1347" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-ancestor current-menu-parent current_page_parent current_page_ancestor menu-item-has-children menu-item-1347"><a href="http://qt.io/services/">Services</a>
+<ul class="sub-menu">
+    <li id="menu-item-32" class="menu-item menu-item-type-post_type menu-item-object-page page_item page-item-14 menu-item-32"><a href="http://qt.io/support/">Support</a></li>
+    <li id="menu-item-4028" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4028"><a href="http://qt.io/services-technology-evaluation/">Technology Evaluation</a></li>
+    <li id="menu-item-4027" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4027"><a href="http://qt.io/services-proof-of-concept/">Proof of Concept</a></li>
+    <li id="menu-item-4026" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4026"><a href="http://qt.io/services-design-implementation/">Design &amp; Implementation</a></li>
+    <li id="menu-item-4025" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4025"><a href="http://qt.io/services-productization/">Productization</a></li>
+    <li id="menu-item-5124" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5124"><a href="https://qtcloudservices.com/">Qt Cloud Services</a></li>
+</ul>
+</li>
+<li id="menu-item-1403" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-1403"><a href="http://qt.io/download/">Download</a>
+<ul class="sub-menu">
+    <li id="menu-item-11677" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-11677"><a href="http://qt.io/download">Free 30-Day Trial</a></li>
+    <li id="menu-item-1982" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1982"><a href="http://qt.io/buy-enterprise-step-2/">Enterprise</a></li>
+    <li id="menu-item-1985" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1985"><a href="http://qt.io/buy-professional-step-2/">Professional</a></li>
+    <li id="menu-item-3346" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3346"><a href="http://qt.io/buy-indiemobile-step-2/">Indie Mobile</a></li>
+    <li id="menu-item-3343" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3343"><a href="http://qt.io/download-open-source/">Community</a></li>
+    <li id="menu-item-1415" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1415"><a href="http://qt.io/terms-conditions/">Legal | Terms &amp; Conditions</a></li>
+</ul>
+</li>
+</ul></div></nav>
+<a href="http://qt.io/about-us/" target="_blank" class="theqtcompany"></a>
+    <div class="footer-social clearfix">
+        <div class="facebook">
+            <iframe scrolling="no" frameborder="0" allowTransparency="true" src="//www.facebook.com/plugins/like.php?href=https%3A%2F%2Fwww.facebook.com%2Fqtbydigia&amp;width&amp;layout=button_count&amp;action=like&amp;show_faces=true&amp;share=false&amp;height=21" style="border:none;overflow:hidden;height:21px;"></iframe>
+        </div>
+        <div class="twitter">
+            <iframe id="twitter-widget-0" scrolling="no" frameborder="0" allowtransparency="true" src="http://platform.twitter.com/widgets/follow_button.33b190ea0cba008796487b65df7f6d8e.en.html#_=1414403615717&amp;id=twitter-widget-0&amp;lang=en&amp;screen_name=qtproject&amp;show_count=true&amp;show_screen_name=false&amp;size=m" class="twitter-follow-button twitter-follow-button" title="Twitter Follow Button" data-twttr-rendered="true" style="width: 160px; height: 20px;"></iframe>
+        </div>
+    </div>
+</div>
+</div>
+<div class="disclaimer">
+<div class="container clearfix no_discs">
+    <ul id="menu-footer-submenu" class="right clearfix"><li id="menu-item-1795" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1795"><a title="Sign into your account." href="https://account.qt.io/login">Sign In</a></li>
+      <li id="menu-item-10375" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-10375"><a href="mailto:feedback@theqtcompany.com?Subject=Feedback%20about%20doc.qt.io%20site">Feedback</a></li>
+      <li id="menu-item-1494" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1494"><a href="http://qt.io/contact-us/">Contact us</a></li>
+      <li id="menu-item-4472" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4472"><a href="http://qt.io/about-us/">© 2015 The Qt Company</a></li>
+    </ul>
+</div>
+</div>
+</footer>
+</div>
+</body>
+</html>
